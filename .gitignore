@@ -12,3 +12,16 @@
 /captures
 .externalNativeBuild
 .cxx
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+
+# Android
+.gradle/
+gradlew
+gradlew.bat
+local.properties
+/build
+*.apk
