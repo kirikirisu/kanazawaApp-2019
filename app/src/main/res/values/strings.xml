@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">kanazawaApp-2019</string>
+    <string name="shelterHeaderTitle">避難所</string>
 </resources>
