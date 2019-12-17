@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--circle-->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.49"
+        app:layout_constraintWidth_percent="0.49"
+        android:src="@drawable/shape_circle"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61" />
+
+    <!--蓄える-->
+    <TextView
+        android:id="@+id/storeLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_rounded"
+        android:gravity="center"
+        android:text="@string/store"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintWidth_percent="0.2"
+        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTintMode="multiply" />
+
+    <!--補充-->
+    <TextView
+        android:id="@+id/supplementLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_rounded"
+        android:backgroundTint="@color/colorSecondary"
+        android:backgroundTintMode="multiply"
+        android:gravity="center"
+        android:text="@string/supplement"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.09"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <!--使う-->
+    <TextView
+        android:id="@+id/useLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_rounded"
+        android:backgroundTint="@color/colorAccent"
+        android:backgroundTintMode="multiply"
+        android:gravity="center"
+        android:text="@string/use"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.09"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <!--アプリの説明-->
+    <TextView
+        android:id="@+id/whatsMsg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/whatsMsg"
+        android:autoSizeMinTextSize="20sp"
+        app:layout_constraintWidth_percent="1"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!--ボタンラベルとボタン-->
+    <!--ボタンよりボタンラベルを空間的に上に配置し影を消す事で重ねて表示-->
+    <TextView
+        android:id="@+id/nextBtnLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:outlineProvider="none"
+        android:text="@string/next"
+        android:textColor="#FFFFFF"
+        android:translationZ="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <Button
+        android:id="@+id/moveNextBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_rounded"
+        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTintMode="multiply"
+        android:onClick="toNext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.90"
+        app:layout_constraintWidth_max="240dp"
+        app:layout_constraintWidth_percent="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
