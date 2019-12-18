@@ -1,6 +1,6 @@
 # kanazawaApp-2019
 
-stockSuporter
+stockSupporter
 
 # 注意事項
 
