@@ -60,7 +60,7 @@
         android:layout_marginRight="13dp"
         android:layout_marginBottom="3dp"
         android:background="#FDAB4B"
-        android:text="✔︎"
+        android:text="@string/additionBtn"
         android:textSize="30" />
 
     <Button
@@ -77,7 +77,7 @@
         android:layout_marginBottom="6dp"
         android:background="#FDAB4B"
         android:gravity="left"
-        android:text="@string/additionBtn"
+        android:text="@string/backBtn"
         android:textSize="35" />
 
     <ImageView
