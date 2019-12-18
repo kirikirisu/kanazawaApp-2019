@@ -8,7 +8,7 @@
     android:scrollbarSize="40">
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/boaderLine"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
@@ -16,7 +16,7 @@
         android:background="@color/colorPrimaryDark" />
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/boaderLine2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
@@ -24,18 +24,34 @@
         android:background="@color/colorPrimaryDark" />
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/boaderLine3"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="300dp"
         android:background="@color/colorPrimaryDark" />
 
+    <View
+        android:id="@+id/boaderLine4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="186dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:id="@+id/boaderLine5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="71dp"
+        android:background="@color/colorPrimaryDark" />
+
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/addButton"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignBottom="@+id/text"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -48,10 +64,10 @@
         android:textSize="30" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/backButton"
         android:layout_width="47dp"
         android:layout_height="47dp"
-        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignBottom="@+id/text"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -61,11 +77,11 @@
         android:layout_marginBottom="6dp"
         android:background="#FDAB4B"
         android:gravity="left"
-        android:text="←"
+        android:text="@string/additionBtn"
         android:textSize="35" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/photoView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -77,7 +93,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/foodName"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -90,6 +106,7 @@
         android:inputType="date" />
 
     <Picker
+        android:id="@id/foodCategory"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -100,7 +117,7 @@
         android:layout_marginBottom="556dp" />
 
     <Picker
-        android:id="@+id/picker"
+        android:id="@+id/freshnessDate"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -111,7 +128,7 @@
         android:layout_marginBottom="455dp" />
 
     <Picker
-        android:id="@+id/picker2"
+        android:id="@+id/stockQuantity"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -121,20 +138,6 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="351dp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="186dp"
-        android:background="@color/colorPrimaryDark" />
-
-    <View
-        android:id="@+id/view4"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="71dp"
-        android:background="@color/colorPrimaryDark" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -143,17 +146,17 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FDAB4B"
         android:gravity="center"
-        android:text="保存食追加"
+        android:text="@string/foodAdditionHeader"
         android:textColor="#FFFFFF"
         android:textSize="40" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/limitView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -162,11 +165,11 @@
         android:layout_marginEnd="300dp"
         android:layout_marginRight="300dp"
         android:layout_marginBottom="441dp"
-        android:text="期限"
+        android:text="@string/foodLimit"
         android:textSize="40" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/quantityView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -175,11 +178,11 @@
         android:layout_marginEnd="301dp"
         android:layout_marginRight="301dp"
         android:layout_marginBottom="332dp"
-        android:text="数量"
+        android:text="@string/foodQuantity"
         android:textSize="40" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/commercialView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -188,11 +191,11 @@
         android:layout_marginEnd="304dp"
         android:layout_marginRight="304dp"
         android:layout_marginBottom="99dp"
-        android:text="市販"
+        android:text="@string/commercialFood"
         android:textSize="40" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/saveLocationView"
         android:layout_width="179dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -201,11 +204,11 @@
         android:layout_marginEnd="203dp"
         android:layout_marginRight="203dp"
         android:layout_marginBottom="220dp"
-        android:text="保存場所"
+        android:text="@string/foodLocation"
         android:textSize="40" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/commercialFood"
         android:layout_width="35dp"
         android:layout_height="42dp"
         android:layout_alignParentEnd="true"
@@ -218,7 +221,7 @@
         app:srcCompat="@android:drawable/checkbox_on_background" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/stockIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
