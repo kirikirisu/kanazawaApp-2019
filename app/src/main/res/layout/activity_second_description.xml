@@ -82,7 +82,7 @@
 
     <!--アプリの説明-->
     <TextView
-        android:id="@+id/whatsMsg"
+        android:id="@+id/descriptionMsg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
