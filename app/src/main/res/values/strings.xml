@@ -1,7 +1,4 @@
 <resources>
     <string name="app_name">kanazawaApp-2019</string>
-    <string name="hedderText">買い物リスト</string>
-    <string name="heederText">買い物リスト</string>
-    <string name="deleteButton">削除</string>
     <string name="PreservedFoodListButton" />
 </resources>
