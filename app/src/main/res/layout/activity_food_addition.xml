@@ -47,38 +47,8 @@
         android:layout_marginBottom="71dp"
         android:background="@color/colorPrimaryDark" />
 
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/text"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="3dp"
-        android:background="#FDAB4B"
-        android:text="@string/additionBtn"
-        android:textSize="30" />
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
-        android:layout_alignBottom="@+id/text"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="355dp"
-        android:layout_marginRight="355dp"
-        android:layout_marginBottom="6dp"
-        android:background="#FDAB4B"
-        android:gravity="left"
-        android:text="@string/backBtn"
-        android:textSize="35" />
+
 
     <ImageView
         android:id="@+id/photoView"
@@ -231,5 +201,32 @@
         android:layout_marginRight="79dp"
         android:layout_marginBottom="207dp"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="372dp"
+        android:layout_marginRight="372dp"
+        android:layout_marginBottom="691dp"
+        android:background="#FDAB4B"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:background="#FDAB4B"
+        app:srcCompat="@drawable/add_food" />
+
 
 </RelativeLayout>
