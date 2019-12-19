@@ -4,7 +4,4 @@
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
     <string name="next">次へ</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
-    <string name="store">蓄える</string>
-    <string name="use">使う</string>
-    <string name="supplement">補充</string>
 </resources>
