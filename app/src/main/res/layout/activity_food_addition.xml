@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:scrollbarSize="40">
+    android:scrollbarSize="40dp">
 
     <View
         android:id="@+id/boaderLine"
@@ -136,7 +136,7 @@
         android:layout_marginRight="300dp"
         android:layout_marginBottom="441dp"
         android:text="@string/foodLimit"
-        android:textSize="40" />
+        android:textSize="40dp" />
 
     <TextView
         android:id="@+id/quantityView"
@@ -149,7 +149,7 @@
         android:layout_marginRight="301dp"
         android:layout_marginBottom="332dp"
         android:text="@string/foodQuantity"
-        android:textSize="40" />
+        android:textSize="40dp" />
 
     <TextView
         android:id="@+id/commercialView"
@@ -162,7 +162,7 @@
         android:layout_marginRight="304dp"
         android:layout_marginBottom="99dp"
         android:text="@string/commercialFood"
-        android:textSize="40" />
+        android:textSize="40dp" />
 
     <TextView
         android:id="@+id/saveLocationView"
@@ -175,7 +175,7 @@
         android:layout_marginRight="203dp"
         android:layout_marginBottom="220dp"
         android:text="@string/foodLocation"
-        android:textSize="40" />
+        android:textSize="40dp" />
 
     <ImageView
         android:id="@+id/commercialFood"
@@ -187,7 +187,7 @@
         android:layout_marginEnd="99dp"
         android:layout_marginRight="99dp"
         android:layout_marginBottom="100dp"
-        android:scrollbarSize="20"
+        android:scrollbarSize="20dp"
         app:srcCompat="@android:drawable/checkbox_on_background" />
 
     <ImageView
