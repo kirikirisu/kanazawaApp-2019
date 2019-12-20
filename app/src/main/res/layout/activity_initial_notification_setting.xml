@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/initialSetting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FDAB4B"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/initialSetting" />
+
+    <TextView
+        android:id="@+id/notificationSetting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFDF82"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/initialSetting"
+        android:text="@string/notificationSetting" />
+
+    <TextView
+        android:id="@+id/notificationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationSetting"
+        android:text="@string/notificationDescription" />
+
+    <EditText
+        android:id="@+id/savingDays"
+        android:layout_width="57dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/surviveDate"
+        app:layout_constraintTop_toBottomOf="@+id/notificationDescription" />
+
+    <TextView
+        android:id="@+id/surviveDate"
+        android:layout_width="122dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="32dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/savingDays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/savingDays"
+        android:text="@string/surviveDate" />
+
+    <TextView
+        android:id="@+id/indicationStockQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savingDays"
+        android:text="@string/indicationStockQuantity" />
+
+    <TextView
+        android:id="@+id/notificationTiming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/indicationStockQuantity"
+        android:text="@string/notificationTiming" />
+
+    <TextView
+        android:id="@+id/deadlineNotificationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationTiming"
+        android:text="@string/deadlineNotificationDescription" />
+
+    <TextView
+        android:id="@+id/notificationDateOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/notificationDate"
+        app:layout_constraintEnd_toStartOf="@+id/notificationDate"
+        app:layout_constraintTop_toTopOf="@+id/notificationDate"
+        android:text="@string/notificationDateOne" />
+
+    <TextView
+        android:id="@+id/notificationDateTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/notificationDate"
+        app:layout_constraintStart_toEndOf="@+id/notificationDate"
+        app:layout_constraintTop_toTopOf="@+id/notificationDate"
+        android:text="@string/notificationDateTwo" />
+
+    <EditText
+        android:id="@+id/notificationDate"
+        android:layout_width="71dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/startAppBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deadlineNotificationDescription" />
+
+    <Button
+        android:id="@+id/startAppBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/startApp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
