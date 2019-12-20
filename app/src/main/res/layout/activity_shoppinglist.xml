@@ -11,15 +11,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerText" />
+        app:layout_constraintTop_toBottomOf="@+id/shoppingListHeaderText" />
 
     <TextView
-        android:id="@+id/headerText"
+        android:id="@+id/shoppingListHeaderText"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="#FDAB4B"
         android:gravity="center"
-        android:text="@string/headerText"
+        android:text="@string/shoppingListHeaderText"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -28,15 +28,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/deleteButton"
+        android:id="@+id/shoppingListDeleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00000000"
-        android:text="@string/deleteButton"
+        android:text="@string/shoppingListDeleteButton"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/headerText"
-        app:layout_constraintEnd_toEndOf="@+id/headerText"
+        app:layout_constraintBottom_toBottomOf="@+id/shoppingListHeaderText"
+        app:layout_constraintEnd_toEndOf="@+id/shoppingListHeaderText"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

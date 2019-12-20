@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">kanazawaApp-2019</string>
-    <string name="headerText">買い物リスト</string>
-    <string name="deleteButton">削除</string>
+    <string name="shoppingListHeaderText">買い物リスト</string>
+    <string name="shoppingListDeleteButton">削除</string>
 </resources>
