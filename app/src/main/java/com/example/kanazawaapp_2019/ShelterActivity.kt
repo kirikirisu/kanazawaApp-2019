@@ -13,11 +13,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.IOException
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import sun.jvm.hotspot.utilities.IntArray
+
 
 
 
@@ -36,8 +32,8 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         fetchCsv("shisetsu_hinan.csv")
-        print(shelters)
-        Log.d("sheltersの中身", "shelters")
+        // print(shelters)
+        Log.d("sheltersの中身", "${shelters}")
     }
 
     /* csvの処理 */
@@ -65,23 +61,13 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback {
 
     fun shaping(line: Array<String>){
         val shelter = ShelterData(
-            name = line[11],
-            latitude = line[3].toIntOrNull(),
-            longitude = line[4].toIntOrNull()
+            name = line[10],
+            latitude = line[2],
+            longitude = line[3]
         )
         shelters +=  shelter
     }
 
-    fun mappingShelters(shelters: Array<String>) {
-        for (i in 0 until shelters.size) {
-
-            createMarker(
-                shelters.get(i),
-                shelters.get(i).getLatitude(),
-                shelters.get(i).getLongitude()
-            )
-        }
-    }
 
     /* mapの処理 */
     override fun onMapReady(googleMap: GoogleMap) {
