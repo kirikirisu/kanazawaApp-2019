@@ -8,16 +8,26 @@
         android:id="@+id/shoppingListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/shoppingListTabLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shoppingListHeaderText" />
+
+    <View
+        android:id="@+id/shoppigListHeaderView"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="#FDAB4B"
+        app:layout_constraintBottom_toBottomOf="@+id/shoppingListHeaderText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/shoppingListHeaderText"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:background="#FDAB4B"
+        android:background="#00000000"
         android:gravity="center"
         android:text="@string/shoppingListHeaderText"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -38,5 +48,43 @@
         app:layout_constraintBottom_toBottomOf="@+id/shoppingListHeaderText"
         app:layout_constraintEnd_toEndOf="@+id/shoppingListHeaderText"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/shoppingListTabLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicatorColor="#707070"
+        app:tabIndicatorGravity="top"
+        app:tabRippleColor="#00000000">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/blackPreservedFoodTabItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/graylist" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/orangeShoppingListTabItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/orangebag" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <ImageButton
+        android:id="@+id/shoppingListAddButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:background="@drawable/shopping_list_add_button_form"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shoppingListTabLayout"
+        app:srcCompat="@drawable/plusicon" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
