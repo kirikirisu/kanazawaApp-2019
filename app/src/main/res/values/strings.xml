@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">kanazawaApp-2019</string>
+    <string name="PreservedFoodsListHeader">保存食一覧</string>
 </resources>
