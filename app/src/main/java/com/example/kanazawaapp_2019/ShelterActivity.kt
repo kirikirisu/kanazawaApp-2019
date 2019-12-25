@@ -19,7 +19,7 @@ import java.io.IOException
 
 class ShelterActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var mMap: GoogleMap
+    private lateinit var gMap: GoogleMap
     var column: Array<String> = emptyArray()
     var shelters: Array<ShelterData> = emptyArray()
 
@@ -32,8 +32,6 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         fetchCsv("shisetsu_hinan.csv")
-        // print(shelters)
-        Log.d("sheltersの中身", "${shelters}")
     }
 
     /* csvの処理 */
@@ -60,22 +58,37 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     fun shaping(line: Array<String>){
+        var name = line[10]
+        var latitude = line[2]
+        var longitude = line[3]
+
+
         val shelter = ShelterData(
-            name = line[10],
-            latitude = line[2],
-            longitude = line[3]
+            name = name,
+            latitude = latitude,
+            longitude = longitude
         )
         shelters +=  shelter
     }
 
+    fun mappingMarker(shelters: Array<ShelterData>) {
+        for(i in shelters) {
+            val lat = i.latitude?.toDouble()
+            val lon = i.longitude?.toDouble()
+            val location = LatLng(lat!!, lon!!)
+            gMap.addMarker(MarkerOptions().position(location))
+        }
+
+    }
 
     /* mapの処理 */
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
+        gMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val kanazawa = LatLng(36.561031, 136.656647)
+        gMap.addMarker(MarkerOptions().position(kanazawa).title("kanazawa"))
+        gMap.moveCamera(CameraUpdateFactory.newLatLng(kanazawa))
+        mappingMarker(shelters)
     }
 }
