@@ -1,5 +1,6 @@
 package com.example.kanazawaapp_2019
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.AbsSavedState
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_first_description.*
 import kotlinx.android.synthetic.main.activity_food_addition.*
+import java.util.*
 
 class FoodAdditionActivity : AppCompatActivity(){
 
@@ -19,6 +21,8 @@ class FoodAdditionActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_addition)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //val spinner = findViewById<Spinner>(R.id.spinner)
 
@@ -49,6 +53,24 @@ class FoodAdditionActivity : AppCompatActivity(){
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 //
             }
+        }
+
+        //Calender
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        //button click to show DatePicker
+
+        DatePicker.setOnClickListener{
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{
+                    view ,mYear ,mMonth ,mDay ->
+                //set TextView
+                dateText.setText(""+mDay+"/"+mMonth+"/"+mYear)
+            },year,month,day)
+                //show dialog
+            dpd.show()
         }
     }
 }

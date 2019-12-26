@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:scrollbarSize="40dp">
 
+    <!--境界線-->
     <View
         android:id="@+id/boaderLine"
         android:layout_width="match_parent"
@@ -47,9 +48,7 @@
         android:layout_marginBottom="71dp"
         android:background="@color/colorPrimaryDark" />
 
-
-
-
+    <!--保存食写真-->
     <ImageView
         android:id="@+id/photoView"
         android:layout_width="wrap_content"
@@ -63,6 +62,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
 
+    <!--保存食名-->
     <EditText
         android:id="@+id/foodName"
         android:layout_width="175dp"
@@ -76,6 +76,7 @@
         android:ems="10"
         android:inputType="date" />
 
+    <!--保存食ジャンル選択ピッカー-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="200dp"
@@ -99,6 +100,29 @@
         android:layout_marginBottom="546dp"
         android:background="#fff" />
 
+    <!--期限ピッカー-->
+    <Button
+        android:id="@+id/DatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="454dp"
+        android:text="@string/datePiceker" />
+
+    <!--保存食数量ピッカー-->
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="430dp"
+        android:text="@string/pickerText" />
+
     <NumberPicker
         android:id="@+id/stockQuantity"
         android:layout_width="180dp"
@@ -110,16 +134,7 @@
         android:layout_marginRight="23dp"
         android:layout_marginBottom="314dp" />
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FDAB4B"
-        android:gravity="center"
-        android:text="@string/foodAdditionHeader"
-        android:textColor="#FFFFFF"
-        android:textSize="40dp" />
-
+    <!--記入項目-->
     <TextView
         android:id="@+id/limitView"
         android:layout_width="wrap_content"
@@ -172,6 +187,7 @@
         android:text="@string/foodLocation"
         android:textSize="40dp" />
 
+    <!--チェックボックス-->
     <ImageView
         android:id="@+id/commercialFood"
         android:layout_width="35dp"
@@ -185,6 +201,7 @@
         android:scrollbarSize="20dp"
         app:srcCompat="@android:drawable/checkbox_on_background" />
 
+    <!--場所アイコン-->
     <ImageView
         android:id="@+id/stockIcon"
         android:layout_width="wrap_content"
@@ -197,19 +214,7 @@
         android:layout_marginBottom="207dp"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="372dp"
-        android:layout_marginRight="372dp"
-        android:layout_marginBottom="691dp"
-        android:background="#FDAB4B"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
-
+    <!--保存食追加ボタン-->
     <ImageButton
         android:id="@+id/additionButton"
         android:layout_width="wrap_content"
