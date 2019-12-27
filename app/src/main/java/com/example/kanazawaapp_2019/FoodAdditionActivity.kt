@@ -15,6 +15,7 @@ import java.util.*
 
 class FoodAdditionActivity : AppCompatActivity(){
 
+    //保存食のジャンル分け機能
     //選択肢
     private val spinnerItems= arrayOf("飲料水","主食","間食")
 
@@ -55,6 +56,7 @@ class FoodAdditionActivity : AppCompatActivity(){
             }
         }
 
+        //保存期限の選択機能
         //Calender
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -67,10 +69,16 @@ class FoodAdditionActivity : AppCompatActivity(){
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{
                     view ,mYear ,mMonth ,mDay ->
                 //set TextView
-                dateText.setText(""+mDay+"/"+mMonth+"/"+mYear)
+                dateText.setText(""+mYear+"/"+mMonth+"/"+mDay)
             },year,month,day)
                 //show dialog
             dpd.show()
         }
+
+        //保存食量の選択ピッカー機能
+        number_picker.minValue= 0
+        number_picker.maxValue= 100
+
+        number_picker.wrapSelectorWheel = true
     }
 }
