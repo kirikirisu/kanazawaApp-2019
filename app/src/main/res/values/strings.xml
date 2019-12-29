@@ -2,4 +2,6 @@
     <string name="app_name">kanazawaApp-2019</string>
     <string name="shoppingListHeaderText">買い物リスト</string>
     <string name="shoppingListDeleteButton">削除</string>
+    <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
+    <string name="next">次へ</string>
 </resources>

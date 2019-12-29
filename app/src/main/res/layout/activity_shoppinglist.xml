@@ -8,7 +8,8 @@
         android:id="@+id/shoppingListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/shoppingListTabLayout"
+        android:background="#707070"
+        app:layout_constraintBottom_toTopOf="@+id/shoppingListLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shoppingListHeaderText" />
@@ -53,11 +54,11 @@
         android:id="@+id/shoppingListTabLayout"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:foreground="?android:windowContentOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tabIndicatorColor="#707070"
-        app:tabIndicatorGravity="top"
+        app:tabIndicatorColor="#00000000"
         app:tabRippleColor="#00000000">
 
         <com.google.android.material.tabs.TabItem
@@ -85,6 +86,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/shoppingListTabLayout"
         app:srcCompat="@drawable/plusicon" />
+
+    <View
+        android:id="@+id/shoppingListLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#707070"
+        app:layout_constraintBottom_toTopOf="@+id/shoppingListTabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
