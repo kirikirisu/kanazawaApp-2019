@@ -11,7 +11,9 @@ stockSupporter
 - コミット名は日本語で何をしたのかわかりやすくつける。
 - Pull Request(PR)と Issue を関連づける。
 
-# ブランチ名
+# 命名規則
+
+## ブランチ名
 
 - 画面を作る場合
 
@@ -36,6 +38,26 @@ fix-hoge
 ```
 add-hoge
 ```
+
+## ID名
+- componentのID
+
+```
+android:id="@+id/lowerCamelCase
+```
+
+- `app/src/main/res/values` 下のxmlファイルに記述するID(string.xmlの例)
+
+```
+<string name="lowerCamelCase">文字列</string>
+```
+
+## ファイル名
+- `app/src/main/res/drawable` 下のファイル名(pngファイルの例)
+```
+snake_case.png
+```
+
 
 # 開発手順
 
