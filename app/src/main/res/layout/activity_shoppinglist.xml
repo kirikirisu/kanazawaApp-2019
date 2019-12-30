@@ -65,13 +65,13 @@
             android:id="@+id/blackPreservedFoodTabItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/graylist" />
+            android:icon="@drawable/gray_list" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/orangeShoppingListTabItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/orangebag" />
+            android:icon="@drawable/orange_bag" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -85,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/shoppingListTabLayout"
-        app:srcCompat="@drawable/plusicon" />
+        app:srcCompat="@drawable/plus_icon" />
 
     <View
         android:id="@+id/shoppingListLine"
