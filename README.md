@@ -39,25 +39,27 @@ fix-hoge
 add-hoge
 ```
 
-## ID名
-- componentのID
+## ID 名
+
+- component の ID
 
 ```
 android:id="@+id/lowerCamelCase
 ```
 
-- `app/src/main/res/values` 下のxmlファイルに記述するID(string.xmlの例)
+- `app/src/main/res/values` 下の xml ファイルに記述する ID(string.xml の例)
 
 ```
 <string name="lowerCamelCase">文字列</string>
 ```
 
 ## ファイル名
-- `app/src/main/res/drawable` 下のファイル名(pngファイルの例)
+
+- `app/src/main/res/drawable` 下のファイル名(png ファイルの例)
+
 ```
 snake_case.png
 ```
-
 
 # 開発手順
 
@@ -69,3 +71,12 @@ snake_case.png
   - 作業が完了したなら「レビュー依頼」
 - レビューしてもらう
 - マージ
+
+## `ラベル`の使い方
+
+①. レビューを貰う人が PR を出して`「レビュー依頼」`を貼る。
+②. 誰か 1 人のレビュワーがレビューした段階で`「レビュー依頼」`を外す。同時に、”見ました”の意味で`「reviewed」`を貼る。
+③. レビューを貰った人が、指摘部分を修正してコミット。`「reviewed」`を外し、再び`「レビュー依頼」`を貼る。
+④. ② と ③ を n 回(n∈N)繰り返し、レビュワーが問題無いと判断した場合 Approve する。
+⑤. 任意の人数(例えば 2 人)が Approve したら`「Approved」`を貼る。(最後に Approve した人が貼る。)
+⑥. `「Approved」`が貼られた PR を merge する。
