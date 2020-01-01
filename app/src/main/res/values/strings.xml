@@ -17,5 +17,4 @@
     <string name="notificationTiming">を下回ったら通知する</string>
     <string name="notificationDateOne">期限切れの</string>
     <string name="notificationDateTwo">日前に通知する</string>
-
-</resources>
+    <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
