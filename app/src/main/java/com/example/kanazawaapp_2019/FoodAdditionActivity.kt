@@ -25,6 +25,7 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
         //val spinner = findViewById<Spinner>(R.id.spinner)
 
         //ArrayAdapter
@@ -35,6 +36,7 @@ class FoodAdditionActivity : AppCompatActivity(){
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
 
         //spinnerにadapterをセット
         //Kotlin Android Extension
@@ -80,5 +82,23 @@ class FoodAdditionActivity : AppCompatActivity(){
         number_picker.maxValue= 100
 
         number_picker.wrapSelectorWheel = true
+
+//        override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+//            R.id.action_settings -> {
+//                // User chose the "Settings" item, show the app settings UI...
+//                true
+//            }
+//
+//            R.id.action_addition -> {
+//                // User chose the "Favorite" action, mark the current item
+//                // as a favorite...
+//                true
+//            }
+//
+//            else -> {
+//                // If we got here, the user's action was not recognized.
+//                // Invoke the superclass to handle it.
+//                super.onOptionsItemSelected(item)
+//            }
     }
 }
