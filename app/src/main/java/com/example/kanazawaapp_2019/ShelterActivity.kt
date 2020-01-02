@@ -48,6 +48,7 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
 
         fetchCsv("shisetsu_hinan.csv")
 
+        /*パーミッション確認*/
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1000)
@@ -67,6 +68,7 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
 
     /* 現在地取得処理 */
     fun locationStart() {
+
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -102,6 +104,8 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
             // 使用が許可された
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Log.d("debug", "checkSelfPermission true")
+                // gMap.isMyLocationEnabled = true
+                // gMap.uiSettings.isMyLocationButtonEnabled = true
 
                 locationStart()
 
@@ -186,7 +190,13 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
             val location = LatLng(lat!!, lon!!)
             gMap.addMarker(MarkerOptions().position(location))
         }
+    }
 
+    fun setUpMap() {
+        gMap.isMyLocationEnabled = true
+
+        val currnetLocation = LatLng(currentLatitude, currentLongitude)
+        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currnetLocation, 14f))
     }
 
     /* mapの処理 */
@@ -195,10 +205,11 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
 
         gMap.uiSettings.isZoomControlsEnabled = true
 
-        // Add a marker in Sydney and move the camera
+        setUpMap()
+
+        mappingMarker(shelters)
+
         val kanazawa = LatLng(36.561031, 136.656647)
-        gMap.addMarker(MarkerOptions().position(kanazawa).title("kanazawa"))
-        gMap.moveCamera(CameraUpdateFactory.newLatLng(kanazawa))
-        // mappingMarker(shelters)
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kanazawa, 16f))
     }
 }
