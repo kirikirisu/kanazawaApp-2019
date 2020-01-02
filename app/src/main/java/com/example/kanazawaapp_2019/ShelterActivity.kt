@@ -105,7 +105,8 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
             // 使用が許可された
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Log.d("debug", "checkSelfPermission true")
-
+                gMap.isMyLocationEnabled = true
+                gMap.uiSettings.isMyLocationButtonEnabled = true
                 locationStart()
 
             } else {
@@ -199,6 +200,7 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
     /* mapの処理 */
     override fun onMapReady(googleMap: GoogleMap) {
         gMap = googleMap
+        mappingMarker(shelters)
 
         gMap.uiSettings.isZoomControlsEnabled = true
 
@@ -206,20 +208,13 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
             if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
                 // ActivityCompat.requestPermissions(this,
                     // arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1000)
-                setUpMap()
+                return
             }else{
                 setUpMap()
             }
         }
 
-        mappingMarker(shelters)
-
-        // 現在地ボタン押された時
-        val currnetLocation = LatLng(currentLatitude, currentLongitude)
-        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currnetLocation, 14f))
-
         val kanazawa = LatLng(36.561031, 136.656647)
         gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kanazawa, 16f))
-
     }
 }
