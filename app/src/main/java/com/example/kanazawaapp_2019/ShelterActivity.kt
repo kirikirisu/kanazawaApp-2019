@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -104,8 +105,6 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
             // 使用が許可された
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Log.d("debug", "checkSelfPermission true")
-                // gMap.isMyLocationEnabled = true
-                // gMap.uiSettings.isMyLocationButtonEnabled = true
 
                 locationStart()
 
@@ -194,9 +193,7 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
 
     fun setUpMap() {
         gMap.isMyLocationEnabled = true
-
-        val currnetLocation = LatLng(currentLatitude, currentLongitude)
-        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currnetLocation, 14f))
+        gMap.uiSettings.isMyLocationButtonEnabled = true
     }
 
     /* mapの処理 */
@@ -205,11 +202,24 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
 
         gMap.uiSettings.isZoomControlsEnabled = true
 
-        setUpMap()
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                // ActivityCompat.requestPermissions(this,
+                    // arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1000)
+                setUpMap()
+            }else{
+                setUpMap()
+            }
+        }
 
         mappingMarker(shelters)
 
+        // 現在地ボタン押された時
+        val currnetLocation = LatLng(currentLatitude, currentLongitude)
+        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currnetLocation, 14f))
+
         val kanazawa = LatLng(36.561031, 136.656647)
         gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kanazawa, 16f))
+
     }
 }
