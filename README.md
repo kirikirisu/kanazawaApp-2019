@@ -19,6 +19,12 @@ stockSupporter
 createScreen-hoge-yourName
 ```
 
+- やることリストをやった場合
+
+```
+toDo-hoge
+```
+
 - 何かを修正した場合
 
 ```
