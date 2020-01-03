@@ -12,43 +12,7 @@
         app:layout_constraintBottom_toTopOf="@+id/shoppingListLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shoppingListHeaderText" />
-
-    <View
-        android:id="@+id/shoppigListHeaderView"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:background="@color/colorMain"
-        app:layout_constraintBottom_toBottomOf="@+id/shoppingListHeaderText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/shoppingListHeaderText"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="@color/transparent"
-        android:gravity="center"
-        android:text="@string/shoppingListHeaderText"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorWhite"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/shoppingListDeleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/transparent"
-        android:text="@string/shoppingListDeleteButton"
-        android:textColor="@color/colorWhite"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/shoppingListHeaderText"
-        app:layout_constraintEnd_toEndOf="@+id/shoppingListHeaderText"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/shoppingListToolbar" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/shoppingListTabLayout"
@@ -95,6 +59,34 @@
         app:layout_constraintBottom_toTopOf="@+id/shoppingListTabLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/shoppingListToolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorMain"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/shoppingListHeaderText"
+        app:titleMargin="4dp"
+        app:titleMarginStart="144dp"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:titleTextColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/shoppigListDeleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:text="@string/shoppingListDeleteButton"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/shoppingListToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
