@@ -39,6 +39,8 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
     var currentLatitude: Double=0.toDouble()
     var currentLongitude: Double=0.toDouble()
 
+    val PERMISSION_CODE = 1000
+
     lateinit var locationManager: LocationManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,11 +56,13 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
 
         fetchCsv("shisetsu_hinan.csv")
 
-        /*パーミッション確認*/
+        /*パーミッションがあるか確認*/
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            // なかった場合はリクエストする
             ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1000)
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), PERMISSION_CODE)
         }else{
+            // あった場合は現在地を取得する
             locationStart()
 
             if(::locationManager.isInitialized){
@@ -104,18 +108,18 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
             this)
     }
 
+    /*パーミッションリクエスト後の処理*/
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        if (requestCode == 1000) {
+        if (requestCode == PERMISSION_CODE) {
             // 使用が許可された
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Log.d("debug", "checkSelfPermission true")
-                gMap.isMyLocationEnabled = true
-                gMap.uiSettings.isMyLocationButtonEnabled = true
+                setUpMap()
                 locationStart()
 
             } else {
-                // それでも拒否された時の対応
+                // それでも拒否された時
                 val toast = Toast.makeText(this,
                     "これ以上なにもできません", Toast.LENGTH_SHORT)
                 toast.show()
@@ -211,10 +215,9 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-                // ActivityCompat.requestPermissions(this,
-                    // arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1000)
                 return
             }else{
+                // パーミッションがない場合にこの処理をするとクラッシュする
                 setUpMap()
             }
         }
