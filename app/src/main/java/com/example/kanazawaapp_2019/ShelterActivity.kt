@@ -14,7 +14,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 // import androidx.core.content.getSystemService
 import android.provider.Settings
+import android.view.Window
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -46,6 +48,9 @@ class ShelterActivity : AppCompatActivity(), OnMapReadyCallback, LocationListene
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        setSupportActionBar(findViewById(R.id.shelterToolbar))
+        window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimaryDark)
 
         fetchCsv("shisetsu_hinan.csv")
 
