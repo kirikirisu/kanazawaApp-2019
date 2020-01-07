@@ -6,4 +6,5 @@
     <string name="howToAddFoodHeader">保存食追加の仕方</string>
     <string name="howToLookListHeader">リストの見方</string>
     <string name="howToLookFirstScreenHeader">一覧の見方</string>
+    <string name="howToNotificationSettingsHeader">通知設定の仕方</string>
 </resources>

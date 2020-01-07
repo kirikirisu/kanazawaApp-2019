@@ -51,6 +51,9 @@ class GettingStartMainActivity: AppCompatActivity() {
                     Log.i("debug", "一覧の見方")
                     finalyIntent = Intent(this, HowToLookFirstScreenActivity::class.java)
                 }
+                3 -> {
+                    finalyIntent = Intent(this, HowToNotificationSettingsActivity::class.java)
+                }
             }
             startActivity(finalyIntent)
         }

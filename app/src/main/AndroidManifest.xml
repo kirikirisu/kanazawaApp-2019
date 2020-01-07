@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".HowToLookFirstScreenActivity"></activity>
+        <activity android:name=".HowToNotificationSettingsActivity"></activity>
+        <activity android:name=".HowToLookFirstScreenActivity" />
         <activity android:name=".HowToLookListActivity" />
         <activity android:name=".HowToAddFoodActivity" />
         <activity
