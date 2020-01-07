@@ -33,7 +33,7 @@ class GettingStartMainActivity: AppCompatActivity() {
 
     fun renderList() {
         val listView = findViewById(R.id.listView) as ListView
-        val dataArray = arrayOf("保存食追加の仕方", "リストの見方", "一覧の見方", "通知設定の仕方", "避難場の見方")
+        val dataArray = arrayOf("保存食追加の仕方", "リストの見方", "一覧の見方", "通知設定の仕方", "避難所の見方")
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataArray)
         listView.adapter = adapter
         listView.setOnItemClickListener { parent, view, position, id ->
@@ -53,6 +53,9 @@ class GettingStartMainActivity: AppCompatActivity() {
                 }
                 3 -> {
                     finalyIntent = Intent(this, HowToNotificationSettingsActivity::class.java)
+                }
+                4 -> {
+                    finalyIntent = Intent(this, HowToLookShelterActivity::class.java)
                 }
             }
             startActivity(finalyIntent)
