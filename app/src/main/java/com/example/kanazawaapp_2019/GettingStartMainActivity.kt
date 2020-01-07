@@ -1,5 +1,6 @@
 package com.example.kanazawaapp_2019
 
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.PorterDuff
 import android.os.Bundle
@@ -30,6 +31,8 @@ class GettingStartMainActivity: AppCompatActivity() {
             when (position) {
                 0 -> {
                     Log.i("debug", "保存食追加の仕方")
+                    val intent = Intent(this, HowToAddFoodActivity::class.java)
+                    startActivity(intent)
                 }
                 1 -> {
                     Log.i("debug", "リストの見方")
