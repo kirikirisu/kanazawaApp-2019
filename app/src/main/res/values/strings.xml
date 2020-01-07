@@ -4,4 +4,5 @@
     <string name="next">次へ</string>
     <string name="gettingStartMainHeader">簡単入門</string>
     <string name="howToAddFoodHeader">保存食追加の仕方</string>
+    <string name="howToLookListHeader">リストの見方</string>
 </resources>

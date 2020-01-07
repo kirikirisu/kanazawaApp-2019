@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         app:titleTextColor="@color/colorWhite"
-        app:title="@string/gettingStartMainHeader"/>
+        app:title="@string/howToLookListHeader"/>
 
-    <ListView
-        android:id="@+id/listView"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="リストの見方画面"/>
 
 </LinearLayout>

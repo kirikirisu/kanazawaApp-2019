@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 
-class HowToAddFoodActivity : AppCompatActivity() {
+class HowToLookListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_how_to_add_food)
+        setContentView(R.layout.activity_how_to_look_list)
 
         setUpToolbar()
     }

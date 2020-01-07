@@ -15,13 +15,21 @@ class GettingStartMainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_getting_start_main)
 
-        setSupportActionBar(findViewById(R.id.shelterToolbar))
+        setUpToolbar()
+
+        renderList()
+    }
+
+   fun setUpToolbar() {
+        setSupportActionBar(findViewById(R.id.toolbar))
         window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimaryDark)
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setHomeButtonEnabled(true)
         } ?: IllegalAccessError("toolbar cannot be null")
+    }
 
+    fun renderList() {
         val listView = findViewById(R.id.listView) as ListView
         val dataArray = arrayOf("保存食追加の仕方", "リストの見方", "一覧の見方", "通知設定の仕方", "避難場の見方")
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataArray)
@@ -36,6 +44,8 @@ class GettingStartMainActivity: AppCompatActivity() {
                 }
                 1 -> {
                     Log.i("debug", "リストの見方")
+                    val intent = Intent(this, HowToLookListActivity::class.java)
+                    startActivity(intent)
                 }
                 2 -> {
                     Log.i("debug", "一覧の見方")
