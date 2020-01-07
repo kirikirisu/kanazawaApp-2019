@@ -2,4 +2,5 @@
     <string name="app_name">kanazawaApp-2019</string>
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
     <string name="next">次へ</string>
+    <string name="gettingStartMainHeader">簡単入門</string>
 </resources>
