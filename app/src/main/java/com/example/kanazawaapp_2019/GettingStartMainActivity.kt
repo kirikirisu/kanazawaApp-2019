@@ -1,8 +1,7 @@
 package com.example.kanazawaapp_2019
 
 import android.content.Intent
-import android.content.res.Resources
-import android.graphics.PorterDuff
+import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -11,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 class GettingStartMainActivity: AppCompatActivity() {
+
+    lateinit var finalyIntent: Intent
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_getting_start_main)
@@ -39,18 +41,18 @@ class GettingStartMainActivity: AppCompatActivity() {
             when (position) {
                 0 -> {
                     Log.i("debug", "保存食追加の仕方")
-                    val intent = Intent(this, HowToAddFoodActivity::class.java)
-                    startActivity(intent)
+                    finalyIntent = Intent(this, HowToAddFoodActivity::class.java)
                 }
                 1 -> {
                     Log.i("debug", "リストの見方")
-                    val intent = Intent(this, HowToLookListActivity::class.java)
-                    startActivity(intent)
+                    finalyIntent = Intent(this, HowToLookListActivity::class.java)
                 }
                 2 -> {
                     Log.i("debug", "一覧の見方")
+                    finalyIntent = Intent(this, HowToLookFirstScreenActivity::class.java)
                 }
             }
+            startActivity(finalyIntent)
         }
     }
 }
