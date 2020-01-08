@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">kanazawaApp-2019</string>
     <string name="next">次へ</string>
@@ -18,3 +19,7 @@
     <string name="notificationDateOne">期限切れの</string>
     <string name="notificationDateTwo">日前に通知する</string>
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
+    <string name="appName">kanazawaApp-2019</string>
+    <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
+
+</resources>
