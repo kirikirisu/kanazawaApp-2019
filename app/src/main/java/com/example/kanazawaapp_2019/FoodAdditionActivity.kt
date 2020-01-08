@@ -4,16 +4,35 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.AbsSavedState
+import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_first_description.*
 import kotlinx.android.synthetic.main.activity_food_addition.*
 import java.util.*
 
 class FoodAdditionActivity : AppCompatActivity(){
+
+//    //カメラ機能
+//    val REQUEST_IMAGE_CAPTURE = 1
+//
+//    private fun dispatchTakePictureIntent() {
+//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+//            takePictureIntent.resolveActivity(packageManager)?.also {
+//                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+//            }
+//        }
+//    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+//            val imageBitmap = data.extras.get("data") as Bitmap
+//            photoView.setImageBitmap(imageBitmap)
+//        }
+//    }
 
     //保存食のジャンル分け機能
     //選択肢
@@ -23,7 +42,12 @@ class FoodAdditionActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_addition)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        window.statusBarColor = ContextCompat.getColor(this,R.color.colorPrimaryDark)
+        setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.setHomeButtonEnabled(true)
+        } ?: IllegalAccessError("toolbar cannot be, null")
 
 
         //val spinner = findViewById<Spinner>(R.id.spinner)
@@ -49,8 +73,7 @@ class FoodAdditionActivity : AppCompatActivity(){
                 val item = spinnerParent.selectedItem as String
 
 
-                //Kotlin Android Extension
-                textView.text = item
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -79,7 +102,7 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         //保存食量の選択ピッカー機能
         number_picker.minValue= 0
-        number_picker.maxValue= 100
+        number_picker.maxValue= 300
 
         number_picker.wrapSelectorWheel = true
 
@@ -100,5 +123,15 @@ class FoodAdditionActivity : AppCompatActivity(){
 //                // Invoke the superclass to handle it.
 //                super.onOptionsItemSelected(item)
 //            }
+    }
+
+    //戻るボタンの処理
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item!!.itemId) {
+            android.R.id.home -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

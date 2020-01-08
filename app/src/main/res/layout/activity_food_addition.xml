@@ -7,6 +7,15 @@
     android:orientation="vertical"
     android:scrollbarSize="40dp">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/foodAdditionHeader"/>
+
     <!--境界線-->
     <View
         android:id="@+id/boaderLine"
@@ -77,19 +86,6 @@
         android:inputType="date" />
 
     <!--保存食ジャンル選択ピッカー-->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="125dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="546dp"
-        android:layout_gravity="center"
-        android:textColor="#00f"
-        android:textSize="40sp" />
-
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="200dp"
