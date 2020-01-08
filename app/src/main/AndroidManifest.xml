@@ -29,9 +29,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${API_KEY}" />
 
-        <activity
-            android:name=".ShelterActivity"
-            >
+        <activity android:name=".ShelterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -39,6 +37,10 @@
         </activity>
         <activity
             android:name=".FirstDescriptionActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".SecondDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
 
