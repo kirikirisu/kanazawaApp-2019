@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="appName">kanazawaApp-2019</string>
+    <string name="shelterHeaderTitle">避難所</string>
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
     <string name="next">次へ</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
