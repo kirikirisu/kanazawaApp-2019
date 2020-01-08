@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">kanazawaApp-2019</string>
     <string name="shoppingListHeaderText">買い物リスト</string>
     <string name="shoppingListDeleteButton">削除</string>
     <string name="appName">kanazawaApp-2019</string>
