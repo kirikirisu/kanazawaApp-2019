@@ -19,6 +19,4 @@ class shoppingSiteFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_shopping_site, container, false)
     }
-
-
 }
