@@ -4,4 +4,7 @@
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
     <string name="next">次へ</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
+    <string name="appDescription">登録した保存食を\n追加購入まで\n管理できます。</string>
+    <string name="descriptionLastTutorial">わからないことは\n"簡単入門"で確認できます。\nまずは初期設定をしましょう。</string>
+    <string name="goToSetting">設定へ</string>
 </resources>
