@@ -15,7 +15,7 @@ class DrinkFragmentActivity : Fragment() {
     ): View? {
         val mainFrame = inflater!!.inflate(R.layout.fragment_drink, container, false)
         val listview = mainFrame.findViewById(R.id.drinkListViewID) as ListView
-        val dataArray = arrayOf("kotlin", "android", "swift","ios")
+        val dataArray = arrayOf("水１", "水２", "水３","水４")
         val adapter = this.context?.let { ArrayAdapter<String>(it,  android.R.layout.simple_list_item_1, dataArray) }
         listview.adapter = adapter
         return mainFrame

@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
-    <!--ただのTextViewです。stringファイルにテキストを設定しておきましょう。-->
-    <androidx.appcompat.widget.AppCompatTextView
+
+    <ListView
+        android:id="@+id/snackListViewID"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="間食" />
+        android:layout_height="match_parent" />
 </LinearLayout>
