@@ -7,40 +7,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="PreservedFoodsListActivity">
-    <LinearLayout
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <!--このボタンを押すとactivity_first_fragmentに切り替わる。-->
-        <Button
-            android:id="@+id/drinkButton"
-            android:layout_width="0dp"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/PreservedFoodsListHeader"/>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="飲料水"
-            android:background="@color/colorDrink"
-            />
-        　　　　　<!--このボタンを押すとactivity_second_fragmentに切り替わる。-->
-        <Button
-            android:id="@+id/stapleFoodButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="主食"
-            android:background="@color/colorStapleFood"/>
-        <Button
-            android:id="@+id/snackButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="間食"
-            android:background="@color/colorSnack"/>
-    </LinearLayout>
-    <!--ここにフラグメントが入る。-->
-    <LinearLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"/>
+            android:orientation="horizontal">
+            <!--このボタンを押すとactivity_first_fragmentに切り替わる。-->
+            <Button
+                android:id="@+id/drinkButton"
+                android:layout_width="17dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorDrink"
+                android:text="飲料水" />
+            　　　　　<!--このボタンを押すとactivity_second_fragmentに切り替わる。-->
+            <Button
+                android:id="@+id/stapleFoodButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="主食"
+                android:background="@color/colorStapleFood" />
+            <Button
+                android:id="@+id/snackButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="間食"
+                android:background="@color/colorSnack"/>
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
 </LinearLayout>

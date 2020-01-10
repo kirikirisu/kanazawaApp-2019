@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FDAB4B</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#F2B451</color>
+    <color name="colorPrimaryDark">#CE8321</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorDrink">#47E3EF</color>
     <color name="colorStapleFood">#EEA641</color>
     <color name="colorSnack">#ED6E40</color>
-
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

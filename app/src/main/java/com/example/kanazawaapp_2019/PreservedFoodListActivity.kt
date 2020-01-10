@@ -3,12 +3,17 @@ package com.example.kanazawaapp_2019
 import DrinkFragmentActivity
 import SnackFragmentActivity
 import StapleFoodFragmentActivity
-import androidx.appcompat.app.AppCompatActivity
+import android.R.attr.data
+import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.kanazawaapp_2019.R
 import kotlinx.android.synthetic.main.activity_preserved_foods_list.*
+
 
 class PreservedFoodsListActivity : AppCompatActivity() {
 
@@ -35,7 +40,7 @@ class PreservedFoodsListActivity : AppCompatActivity() {
         thirdbutton.setOnClickListener {
             replaceFragment(thirdFragment)
         }
-    }
+   }
 
 //    R.id.containerに引数で渡されたフラグメントを入れる。
     fun replaceFragment(fragment: Fragment) {
