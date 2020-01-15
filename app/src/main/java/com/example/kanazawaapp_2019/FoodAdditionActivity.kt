@@ -1,38 +1,26 @@
 package com.example.kanazawaapp_2019
 
+import android.app.LauncherActivity
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.AbsSavedState
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.ArrayAdapter
+import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_first_description.*
 import kotlinx.android.synthetic.main.activity_food_addition.*
+import java.nio.file.Files.delete
 import java.util.*
 
 class FoodAdditionActivity : AppCompatActivity(){
-
-//    //カメラ機能
-//    val REQUEST_IMAGE_CAPTURE = 1
-//
-//    private fun dispatchTakePictureIntent() {
-//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-//            takePictureIntent.resolveActivity(packageManager)?.also {
-//                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-//            }
-//        }
-//    }
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-//            val imageBitmap = data.extras.get("data") as Bitmap
-//            photoView.setImageBitmap(imageBitmap)
-//        }
-//    }
 
     //保存食のジャンル分け機能
     //選択肢
@@ -42,6 +30,7 @@ class FoodAdditionActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_addition)
 
+        //ActionButtonの追加
         window.statusBarColor = ContextCompat.getColor(this,R.color.colorPrimaryDark)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.let {
@@ -49,6 +38,13 @@ class FoodAdditionActivity : AppCompatActivity(){
             it.setHomeButtonEnabled(true)
         } ?: IllegalAccessError("toolbar cannot be, null")
 
+        //保存食追加ボタン
+        photoView.setOnClickListener {
+            val intent = Intent(application, FoodAdditionActivity::class.java)
+            startActivity(intent)
+        }
+
+        //画像取り込み方法選択のfragment
 
         //val spinner = findViewById<Spinner>(R.id.spinner)
 
@@ -83,7 +79,7 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         //保存期限の選択機能
         //Calender
-        val c = Calendar.getInstance()
+        val c = Calendar.getInstance()  //変数名cをちゃんとしたものに変える
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
@@ -106,23 +102,6 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         number_picker.wrapSelectorWheel = true
 
-//        override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-//            R.id.action_settings -> {
-//                // User chose the "Settings" item, show the app settings UI...
-//                true
-//            }
-//
-//            R.id.action_addition -> {
-//                // User chose the "Favorite" action, mark the current item
-//                // as a favorite...
-//                true
-//            }
-//
-//            else -> {
-//                // If we got here, the user's action was not recognized.
-//                // Invoke the superclass to handle it.
-//                super.onOptionsItemSelected(item)
-//            }
     }
 
     //戻るボタンの処理
@@ -134,4 +113,8 @@ class FoodAdditionActivity : AppCompatActivity(){
         }
         return super.onOptionsItemSelected(item)
     }
+
+    //PopupMenuの処理
+    //フラグメントの呼び出し
+
 }

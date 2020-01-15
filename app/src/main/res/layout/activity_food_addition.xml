@@ -58,18 +58,18 @@
         android:background="@color/colorPrimaryDark" />
 
     <!--保存食写真-->
-    <ImageView
+    <ImageButton
         android:id="@+id/photoView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="123dp"
+        android:layout_height="98dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="272dp"
-        android:layout_marginRight="272dp"
-        android:layout_marginBottom="541dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
+        android:layout_marginEnd="242dp"
+        android:layout_marginRight="242dp"
+        android:layout_marginBottom="545dp"
+        android:background="@color/colorWhite"
+        app:srcCompat="@drawable/camera_icon" />
 
     <!--保存食名-->
     <EditText
