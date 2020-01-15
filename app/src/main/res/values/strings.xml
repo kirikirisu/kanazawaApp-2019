@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">kanazawaApp-2019</string>
     <string name="foodAdditionHeader">保存食追加</string>
@@ -11,5 +11,7 @@
     <string name="datePiceker">賞味期限</string>
     <string name="pickerText">Date</string>
     <string name="quantityString">Select number</string>
+    <string name="barcodeReading">バーコード読み込み</string>
+    <string name="takePicture">写真を撮る</string>
+    <string name="usePicture">写真フォルダ</string>
 </resources>
-
