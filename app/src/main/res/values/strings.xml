@@ -3,6 +3,12 @@
     <string name="appName">kanazawaApp-2019</string>
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
     <string name="next">次へ</string>
+    <string name="gettingStartMainHeader">簡単入門</string>
+    <string name="howToAddFoodHeader">保存食追加の仕方</string>
+    <string name="howToLookListHeader">リストの見方</string>
+    <string name="howToLookFirstScreenHeader">一覧の見方</string>
+    <string name="howToNotificationSettingsHeader">通知設定の仕方</string>
+    <string name="howToLookShelterHeader">避難所の見方</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
     <string name="appDescription">登録した保存食を\n追加購入まで\n管理できます。</string>
     <string name="descriptionLastTutorial">わからないことは\n"簡単入門"で確認できます。\nまずは初期設定をしましょう。</string>
