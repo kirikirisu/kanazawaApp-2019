@@ -8,14 +8,20 @@
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".HowToLookShelterActivity"></activity>
+        <activity android:name=".HowToNotificationSettingsActivity" />
+        <activity android:name=".HowToLookFirstScreenActivity" />
+        <activity android:name=".HowToLookListActivity" />
+        <activity android:name=".HowToAddFoodActivity" />
         <activity
             android:name=".SecondDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".FirstDescriptionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".GettingStartMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
