@@ -5,6 +5,7 @@
     <color name="tabBackgroundUnselected">#C2C3C4</color>
     <color name="colorSecondary">#51E6F2</color>
     <color name="colorPrimaryDark">#CE8321</color>
+    <color name="colorWhite">#FFFFFF</color>
     <color name="colorAccent">#F28351</color>
     <color name="white">#FFFFFF</color>
 </resources>
