@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/shoppingListCheckBox"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toStartOf="@+id/shoppingListItemImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/shoppingListItemImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="9dp"
+        app:layout_constraintBottom_toBottomOf="@+id/shoppingListCheckBox"
+        app:layout_constraintEnd_toStartOf="@+id/shoppingListItemNameText"
+        app:layout_constraintStart_toEndOf="@+id/shoppingListCheckBox"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shoppingListItemNameText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/shoppingItem"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/shoppingListCheckBox"
+        app:layout_constraintEnd_toStartOf="@+id/shoppingListItemCountText"
+        app:layout_constraintStart_toEndOf="@+id/shoppingListItemImageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shoppingListItemCountText"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="@string/shoppingCount"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/shoppingListCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
