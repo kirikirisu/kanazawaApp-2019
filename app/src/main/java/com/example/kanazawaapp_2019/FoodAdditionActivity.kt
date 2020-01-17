@@ -79,10 +79,10 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         //保存期限の選択機能
         //Calender
-        val c = Calendar.getInstance()  //変数名cをちゃんとしたものに変える
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)
+        val calender = Calendar.getInstance()  //変数名cをちゃんとしたものに変える
+        val year = calender.get(Calendar.YEAR)
+        val month = calender.get(Calendar.MONTH)
+        val day = calender.get(Calendar.DAY_OF_MONTH)
 
         //button click to show DatePicker
 
