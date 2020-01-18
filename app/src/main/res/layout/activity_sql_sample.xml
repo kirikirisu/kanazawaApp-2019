@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/edit_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:autofillHints="@string/hint_food_name"
+        android:background="#0ff"
+        android:hint="@string/hint_food_name"
+        android:inputType="text"
+        android:textSize="30dp"
+        ></EditText>
+
+
+    <EditText
+        android:id="@+id/edit_deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:autofillHints="@string/hint_deadline"
+        android:background="#0ff"
+        android:hint="@string/hint_deadline"
+        android:inputType="text"
+        android:textSize="30dp"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/edit_storage_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:autofillHints="@string/hint_storage_location"
+        android:background="#0ff"
+        android:hint="@string/hint_storage_location"
+        android:inputType="text"
+        android:textSize="30dp"
+        ></EditText>
+
+
+    <EditText
+        android:id="@+id/edit_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:autofillHints="@string/hint_quantity"
+        android:background="#0ff"
+        android:hint="@string/hint_quantity"
+        android:inputType="text"
+        android:textSize="30dp"
+        ></EditText>
+
+    <CheckBox
+        android:id="@+id/commercial_or_not"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="@string/hint_commercial_or_not"
+        ></CheckBox>
+</LinearLayout>
