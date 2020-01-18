@@ -10,22 +10,44 @@
     <!-- TODO: Update blank fragment layout -->
 
     <!--機能-->
-   <Button
+
+    <view
+        android:id="@+id/boaderLine01"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PictureTaking" />
+
+    <view
+        android:id="@+id/boaderLine02"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/PictureTaking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/BarcodeReading"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/barcodeReading"
         android:background="@color/colorWhite"
-        app:layout_constraintBottom_toTopOf="@+id/PictureTaking"
+        android:text="@string/barcodeReading"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine02"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/PictureTaking"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/takePicture"
         android:background="@color/colorWhite"
+        android:text="@string/takePicture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,17 +57,11 @@
         android:id="@+id/PictureUsing"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/usePicture"
         android:background="@color/colorWhite"
+        android:text="@string/usePicture"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PictureTaking" />
-
-    <view
-        android:id="@+id/boaderLine01"
-        android:layout_width="200dp"
-        android:layout_height="1dp"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="342dp" />
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine01" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
