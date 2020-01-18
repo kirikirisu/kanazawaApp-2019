@@ -3,9 +3,14 @@ package com.example.kanazawaapp_2019
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_sql_sample.*
 import java.lang.Exception
-
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class SqlSampleActivity: AppCompatActivity() {
     private val dbName: String = "StockSupporterDB"
@@ -19,28 +24,56 @@ class SqlSampleActivity: AppCompatActivity() {
     private val arrayListCreatedAt: ArrayList<String> = arrayListOf()
     private val arrayListCommercial: ArrayList<String> = arrayListOf()
 
-
+    private var editFoodName: String = ""
+    private var editDeadline: String = ""
+    private var editStorageLocation: String = ""
+    private var editQuantity: Int = 0
+    private var isCommercial: String = ""
+    private var createdAt = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sql_sample)
-        insertData(1, "カロリーメイト", "2010-2-15", "棚", 4, "2020-1-18",true)
-        selectData()
+
+        add_button.setOnClickListener {
+            if(edit_food_name.text != null && edit_deadline != null && edit_storage_location != null && editQuantity != null) {
+                editFoodName = edit_food_name.text.toString()
+                editDeadline = edit_deadline.text.toString()
+                editStorageLocation = edit_storage_location.text.toString()
+                isCommercial = commercial_or_not.isChecked().toString()
+
+                Log.d("デバックifの中", isCommercial.toString())
+                if(edit_quantity.text.toString() != "" ){
+                    editQuantity = edit_quantity.text.toString().toInt()
+                }
+            }
+            getCreatedAt()
+
+            insertData( editFoodName, editDeadline, editStorageLocation, editQuantity, createdAt,isCommercial)
+            selectData()
+        }
     }
 
-    private fun insertData(preserved_food_id: Int, food_name: String, deadline: String, storage_location: String, quantity: Int, created_at: String, commercial: Boolean){
+    private fun getCreatedAt(): String {
+        val date = Date()
+        val format = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault())
+        createdAt = format.format(date)
+        return ""
+    }
+
+    private fun insertData(editFoodName: String, editDeadline: String, editStorageLocation: String, editQuantity: Int, createdAt: String, isCommercial: String){
         try{
             val dbHelper = PreservedFoodDBHelper(applicationContext, dbName, null, dbVersion)
             val database = dbHelper.writableDatabase
 
+
             val values = ContentValues()
-            values.put("preserved_food_id", 1)
-            values.put("food_name", "カロリーメイト")
-            values.put("deadline", "2020-2-15")
-            values.put("storage_location", "棚")
-            values.put("quantity", 4)
-            values.put("created_at", "2020-1-18")
-            values.put("commercial", "true")
+            values.put("food_name", editFoodName)
+            values.put("deadline", editDeadline)
+            values.put("storage_location", editStorageLocation)
+            values.put("quantity", editQuantity)
+            values.put("created_at", createdAt)
+            values.put("commercial", isCommercial)
             database.insertOrThrow(tableName, null, values)
         }catch(exception: Exception){
             Log.e("Log", exception.toString())
@@ -76,7 +109,9 @@ class SqlSampleActivity: AppCompatActivity() {
                     cursor.moveToNext()
                 }
             }
-            Log.d("INFO", arrayListFoodName.toString())
+            Log.d("デバック1", arrayListPreservedFoodId.toString())
+            Log.d("デバック2", arrayListFoodName.toString())
+            Log.d("デバック3", arrayListCommercial.toString())
         }catch(exeption: Exception) {
             Log.e("Log", exeption.toString())
         }

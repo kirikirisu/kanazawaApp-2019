@@ -15,4 +15,5 @@
     <string name="hint_storage_location">保存場所</string>
     <string name="hint_quantity">数量</string>
     <string name="hint_commercial_or_not">市販かどうか</string>
+    <string name="addButton">追加</string>
 </resources>
