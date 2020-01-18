@@ -47,11 +47,6 @@ class FoodAdditionActivity : AppCompatActivity(){
             it.setHomeButtonEnabled(true)
         } ?: IllegalAccessError("toolbar cannot be, null")
 
-//        //保存食追加ボタン
-//        photoView.setOnClickListener {
-//            val intent = Intent(application, FoodAdditionActivity::class.java)
-//            startActivity(intent)
-//        }
 
         //ArrayAdapter
         val adapter = ArrayAdapter(
