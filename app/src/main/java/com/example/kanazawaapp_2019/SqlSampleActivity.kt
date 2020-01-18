@@ -42,7 +42,6 @@ class SqlSampleActivity: AppCompatActivity() {
                 editStorageLocation = edit_storage_location.text.toString()
                 isCommercial = commercial_or_not.isChecked().toString()
 
-                Log.d("デバックifの中", isCommercial.toString())
                 if(edit_quantity.text.toString() != "" ){
                     editQuantity = edit_quantity.text.toString().toInt()
                 }
@@ -109,9 +108,6 @@ class SqlSampleActivity: AppCompatActivity() {
                     cursor.moveToNext()
                 }
             }
-            Log.d("デバック1", arrayListPreservedFoodId.toString())
-            Log.d("デバック2", arrayListFoodName.toString())
-            Log.d("デバック3", arrayListCommercial.toString())
         }catch(exeption: Exception) {
             Log.e("Log", exeption.toString())
         }
