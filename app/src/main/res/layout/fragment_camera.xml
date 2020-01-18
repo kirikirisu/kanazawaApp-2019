@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/graytransparent"
     tools:context=".CameraFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <!--機能-->
+   <Button
+        android:id="@+id/BarcodeReading"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/barcodeReading"
+        android:background="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@+id/PictureTaking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/PictureTaking"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/takePicture"
+        android:background="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/PictureUsing"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/usePicture"
+        android:background="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PictureTaking" />
+
+    <view
+        android:id="@+id/boaderLine01"
+        android:layout_width="200dp"
+        android:layout_height="1dp"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="342dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,12 +9,10 @@ import android.view.AbsSavedState
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.Spinner
-import android.widget.ArrayAdapter
-import android.widget.PopupMenu
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_first_description.*
 import kotlinx.android.synthetic.main.activity_food_addition.*
 import java.nio.file.Files.delete
@@ -43,10 +41,6 @@ class FoodAdditionActivity : AppCompatActivity(){
             val intent = Intent(application, FoodAdditionActivity::class.java)
             startActivity(intent)
         }
-
-        //画像取り込み方法選択のfragment
-
-        //val spinner = findViewById<Spinner>(R.id.spinner)
 
         //ArrayAdapter
         val adapter = ArrayAdapter(
@@ -79,7 +73,7 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         //保存期限の選択機能
         //Calender
-        val calender = Calendar.getInstance()  //変数名cをちゃんとしたものに変える
+        val calender = Calendar.getInstance()
         val year = calender.get(Calendar.YEAR)
         val month = calender.get(Calendar.MONTH)
         val day = calender.get(Calendar.DAY_OF_MONTH)
@@ -112,7 +106,9 @@ class FoodAdditionActivity : AppCompatActivity(){
             }
         }
         return super.onOptionsItemSelected(item)
-    }
+
+    //ImageButtonを押したときの処理
+
 
     //PopupMenuの処理
     //フラグメントの呼び出し
