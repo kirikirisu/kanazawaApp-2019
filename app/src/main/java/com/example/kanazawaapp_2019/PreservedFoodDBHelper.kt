@@ -4,14 +4,14 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-private class PreservedFoodDBHelper(content: Context, databaseName: String, factory: SQLiteDatabase.CursorFactory?, version: Int) :
+internal class PreservedFoodDBHelper(content: Context, databaseName: String, factory: SQLiteDatabase.CursorFactory?, version: Int) :
     SQLiteOpenHelper(content, databaseName, factory, version) {
 
     override fun onCreate(database: SQLiteDatabase?) {
         database?.execSQL("create table if not exists PreservedFoodTable (" +
-            "id preserved_food_id primary key autoincrement, " +
+            "preserved_food_id integer primary key autoincrement, " +
             "food_name text," +
-            "deadline integer," +
+            "deadline text," +
             "storage_location text," +
             "quantity integer," +
             "created_at text not null default (datetime('now', 'localtime'))," +
