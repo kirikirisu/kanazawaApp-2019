@@ -15,7 +15,6 @@ class DrinkFragmentActivity : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-
     ): View? {
         val mainFrame = inflater!!.inflate(R.layout.fragment_drink, container, false)
         val listview = mainFrame.findViewById(R.id.drinkListViewID) as ListView
