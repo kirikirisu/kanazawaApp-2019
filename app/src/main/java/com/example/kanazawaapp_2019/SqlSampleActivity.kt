@@ -65,7 +65,6 @@ class SqlSampleActivity: AppCompatActivity() {
             val dbHelper = PreservedFoodDBHelper(applicationContext, dbName, null, dbVersion)
             val database = dbHelper.writableDatabase
 
-
             val values = ContentValues()
             values.put("food_name", editFoodName)
             values.put("deadline", editDeadline)
@@ -89,7 +88,6 @@ class SqlSampleActivity: AppCompatActivity() {
             arrayListCreatedAt.clear()
             arrayListCommercial.clear()
 
-
             val dbHelper = PreservedFoodDBHelper(applicationContext, dbName, null, dbVersion)
             val database = dbHelper.readableDatabase
 
@@ -112,5 +110,4 @@ class SqlSampleActivity: AppCompatActivity() {
             Log.e("Log", exeption.toString())
         }
     }
-
 }

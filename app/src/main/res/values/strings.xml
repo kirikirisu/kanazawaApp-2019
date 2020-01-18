@@ -10,10 +10,10 @@
     <string name="howToNotificationSettingsHeader">通知設定の仕方</string>
     <string name="howToLookShelterHeader">避難所の見方</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
-    <string name="hint_food_name">商品名</string>
-    <string name="hint_deadline">期限</string>
-    <string name="hint_storage_location">保存場所</string>
-    <string name="hint_quantity">数量</string>
-    <string name="hint_commercial_or_not">市販かどうか</string>
+    <string name="hintFoodName">商品名</string>
+    <string name="hintDeadline">期限</string>
+    <string name="hintStorageLocation">保存場所</string>
+    <string name="hintQuantity">数量</string>
+    <string name="hintCommercialOrNot">市販かどうか</string>
     <string name="addButton">追加</string>
 </resources>

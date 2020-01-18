@@ -10,22 +10,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        android:autofillHints="@string/hint_food_name"
+        android:autofillHints="@string/hintFoodName"
         android:background="#0ff"
-        android:hint="@string/hint_food_name"
+        android:hint="@string/hintFoodName"
         android:inputType="text"
         android:textSize="30dp"
         ></EditText>
-
 
     <EditText
         android:id="@+id/edit_deadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        android:autofillHints="@string/hint_deadline"
+        android:autofillHints="@string/hintDeadline"
         android:background="#0ff"
-        android:hint="@string/hint_deadline"
+        android:hint="@string/hintDeadline"
         android:inputType="text"
         android:textSize="30dp"
         ></EditText>
@@ -35,22 +34,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        android:autofillHints="@string/hint_storage_location"
+        android:autofillHints="@string/hintStorageLocation"
         android:background="#0ff"
-        android:hint="@string/hint_storage_location"
+        android:hint="@string/hintStorageLocation"
         android:inputType="text"
         android:textSize="30dp"
         ></EditText>
-
 
     <EditText
         android:id="@+id/edit_quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        android:autofillHints="@string/hint_quantity"
+        android:autofillHints="@string/hintQuantity"
         android:background="#0ff"
-        android:hint="@string/hint_quantity"
+        android:hint="@string/hintQuantity"
         android:inputType="text"
         android:textSize="30dp"
         ></EditText>
@@ -60,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        android:text="@string/hint_commercial_or_not"
+        android:text="@string/hintCommercialOrNot"
         ></CheckBox>
 
     <Button
