@@ -3,6 +3,7 @@ package com.example.kanazawaapp_2019
 import android.app.LauncherActivity
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Camera
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.AbsSavedState
@@ -28,6 +29,16 @@ class FoodAdditionActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_addition)
 
+        //ImageButtonの処理
+        photoView.setOnClickListener {
+            val fragment = CameraFragment()
+            val fragmentManager = this.supportFragmentManager
+            val fragmentTransaction =fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.container,fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
         //ActionButtonの追加
         window.statusBarColor = ContextCompat.getColor(this,R.color.colorPrimaryDark)
         setSupportActionBar(findViewById(R.id.toolbar))
@@ -36,11 +47,11 @@ class FoodAdditionActivity : AppCompatActivity(){
             it.setHomeButtonEnabled(true)
         } ?: IllegalAccessError("toolbar cannot be, null")
 
-        //保存食追加ボタン
-        photoView.setOnClickListener {
-            val intent = Intent(application, FoodAdditionActivity::class.java)
-            startActivity(intent)
-        }
+//        //保存食追加ボタン
+//        photoView.setOnClickListener {
+//            val intent = Intent(application, FoodAdditionActivity::class.java)
+//            startActivity(intent)
+//        }
 
         //ArrayAdapter
         val adapter = ArrayAdapter(
@@ -100,17 +111,12 @@ class FoodAdditionActivity : AppCompatActivity(){
 
     //戻るボタンの処理
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item!!.itemId) {
+        when (item!!.itemId) {
             android.R.id.home -> {
                 finish()
             }
         }
         return super.onOptionsItemSelected(item)
 
-    //ImageButtonを押したときの処理
-
-
-    //PopupMenuの処理
-    //フラグメントの呼び出し
-
+    }
 }

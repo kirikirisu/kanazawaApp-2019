@@ -12,11 +12,7 @@
     <string name="barcodeReading">バーコード読み込み</string>
     <string name="takePicture">写真を撮る</string>
     <string name="usePicture">写真フォルダ</string>
-<<<<<<< HEAD
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-=======
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
     <string name="next">次へ</string>
     <string name="gettingStartMainHeader">簡単入門</string>
@@ -26,5 +22,4 @@
     <string name="howToNotificationSettingsHeader">通知設定の仕方</string>
     <string name="howToLookShelterHeader">避難所の見方</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
->>>>>>> afa7e0e25cbf7e3ae63dd41bef59351691208395
 </resources>

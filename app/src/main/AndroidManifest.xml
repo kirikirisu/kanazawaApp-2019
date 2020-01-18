@@ -10,7 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".FoodAdditionActivity"
-                android:label="@string/foodAdditionHeader" />
+                android:label="@string/foodAdditionHeader">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".HowToLookShelterActivity"></activity>
         <activity android:name=".HowToNotificationSettingsActivity" />
         <activity android:name=".HowToLookFirstScreenActivity" />
@@ -24,10 +29,6 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".GettingStartMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 </manifest>

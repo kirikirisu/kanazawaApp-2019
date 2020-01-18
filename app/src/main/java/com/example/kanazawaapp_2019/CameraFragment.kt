@@ -18,11 +18,8 @@ class CameraFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_camera, container, false)
-        val  = view.findViewById<ListView>(R.id.)
+        return inflater.inflate(R.layout.fragment_camera, container, false)
 
-        return view
     }
-
 
 }
