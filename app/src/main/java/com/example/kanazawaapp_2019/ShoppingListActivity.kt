@@ -22,11 +22,14 @@ class ShoppingListActivity : AppCompatActivity() {
         shoppingListTabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 var position = shoppingListTabLayout.selectedTabPosition
-                if (position == 0) {
-                    val intent = Intent(application, PreservedFoodsListActivity::class.java)
-                    startActivities(arrayOf(intent))
-                }else {
-                    shoppingListView.setSelection(0)
+                when (position) {
+                    0 -> {
+                        val intent = Intent(application, PreservedFoodsListActivity::class.java)
+                        startActivities(arrayOf(intent))
+                    }
+                    else -> {
+                        shoppingListView.setSelection(0)
+                    }
                 }
             }
 
@@ -34,11 +37,13 @@ class ShoppingListActivity : AppCompatActivity() {
 
             override fun onTabReselected(tab: TabLayout.Tab) {
                 var position = shoppingListTabLayout.selectedTabPosition
-                if (position == 0) {
-                    val intent = Intent(application, PreservedFoodsListActivity::class.java)
+                when (position) {
+                    0 -> {val intent = Intent(application, PreservedFoodsListActivity::class.java)
                     startActivities(arrayOf(intent))
-                }else {
+                    }
+                    else -> {
                     shoppingListView.setSelection(0)
+                    }
                 }
             }
         })
