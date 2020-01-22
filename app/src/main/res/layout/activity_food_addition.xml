@@ -190,8 +190,10 @@
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="94dp" />
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="94dp"
+        android:scaleX="2"
+        android:scaleY="2" />
 
     <!--場所アイコン-->
     <ImageButton
