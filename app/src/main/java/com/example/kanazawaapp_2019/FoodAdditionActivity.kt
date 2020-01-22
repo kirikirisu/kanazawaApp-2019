@@ -1,22 +1,16 @@
 package com.example.kanazawaapp_2019
 
-import android.app.LauncherActivity
 import android.app.DatePickerDialog
-import android.content.Intent
-import android.graphics.Camera
+import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.AbsSavedState
-import android.view.MenuInflater
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.activity_first_description.*
 import kotlinx.android.synthetic.main.activity_food_addition.*
-import java.nio.file.Files.delete
 import java.util.*
 
 class FoodAdditionActivity : AppCompatActivity(){
@@ -24,6 +18,7 @@ class FoodAdditionActivity : AppCompatActivity(){
     //保存食のジャンル分け機能
     //選択肢
     private val spinnerItems= arrayOf("飲料水","主食","間食")
+    val PERMISSIN_CODE = 1000
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -31,12 +26,13 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         //ImageButtonの処理
         photoView.setOnClickListener {
-            val fragment = CameraFragment()
+            val fragment = CameraSelectionFragment()
             val fragmentManager = this.supportFragmentManager
             val fragmentTransaction =fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.container,fragment)
                 .addToBackStack(null)
                 .commit()
+            clickCameraButton()
         }
 
         //ActionButtonの追加
@@ -102,6 +98,41 @@ class FoodAdditionActivity : AppCompatActivity(){
 
         number_picker.wrapSelectorWheel = true
 
+    }
+
+    //カメラ認証
+    fun clickCameraButton(){
+        if (ContextCompat.checkSelfPermission(this,android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            //なかった場合
+            ActivityCompat.requestPermissions(this,
+                arrayOf(android.Manifest.permission.CAMERA),PERMISSIN_CODE)
+        }else{
+            //あった場合
+            val toast = Toast.makeText(this,
+                "許可されました",Toast.LENGTH_SHORT)
+            toast.show()
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+       if (requestCode == PERMISSIN_CODE){
+           //許可がされた
+           if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+               val toast = Toast.makeText(this,
+                   "許可されました",Toast.LENGTH_SHORT)
+               toast.show()
+               Log.d("debug","checkSelfPermission true")
+           }else{
+               //拒否された場合
+               val toast = Toast.makeText(this,
+                   "何もできません",Toast.LENGTH_SHORT)
+               toast.show()
+           }
+       }
     }
 
     //戻るボタンの処理
