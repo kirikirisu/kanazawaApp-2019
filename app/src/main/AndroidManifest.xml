@@ -20,12 +20,6 @@
         <activity android:name=".HowToLookFirstScreenActivity" />
         <activity android:name=".HowToLookListActivity" />
         <activity android:name=".HowToAddFoodActivity" />
-        <activity
-            android:name=".SecondDescriptionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity
-            android:name=".FirstDescriptionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".GettingStartMainActivity" />
 
         <activity
