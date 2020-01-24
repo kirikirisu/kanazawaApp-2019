@@ -46,9 +46,7 @@
         app:layout_constraintBottom_toTopOf="@+id/shoppingListLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shoppingListToolbar">
-
-    </ListView>
+        app:layout_constraintTop_toBottomOf="@+id/shoppingListToolbar" />
 
     <View
         android:id="@+id/shoppingListLine"
