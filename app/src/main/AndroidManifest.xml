@@ -8,23 +8,23 @@
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/AppTheme">
+        <activity android:name=".SettingActivity"></activity>
         <activity android:name=".HowToLookShelterActivity"></activity>
         <activity android:name=".HowToNotificationSettingsActivity" />
         <activity android:name=".HowToLookFirstScreenActivity" />
         <activity android:name=".HowToLookListActivity" />
         <activity android:name=".HowToAddFoodActivity" />
-        <activity android:name=".FirstDescriptionActivity"/>
-       <activity android:name=".GettingStartMainActivity"/>
-        <activity
-            android:name=".PreservedFoodsListActivity"
-            android:label="@string/PreservedFoodsListHeader"
-            >
+        <activity android:name=".FirstDescriptionActivity" />
+        <activity android:name=".GettingStartMainActivity" />
+        <activity android:name=".PreservedFoodListActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN">
-                </action>
+                <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
+        <activity android:name=".GettingStartMainActivity" />
+
     </application>
+
 </manifest>
