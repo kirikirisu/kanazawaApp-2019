@@ -6,20 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
+import android.widget.CheckBox
 import android.widget.TextView
 
 class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>) : BaseAdapter() {
 
     private class ViewHolder(row: View?) {
-        var shoppingListItemImageView: ImageView? = null
         var shoppingListItemTextView: TextView? = null
         var shoppingListCountTextView: TextView? = null
 
         init {
             this.shoppingListItemTextView = row?.findViewById<TextView>(R.id.shoppingListItemNameText)
             this.shoppingListCountTextView = row?.findViewById<TextView>(R.id.shoppingListItemCountText)
-            this.shoppingListItemImageView = row?.findViewById<ImageView>(R.id.shoppingListItemImageView)
         }
     }
 
@@ -31,6 +29,7 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
             view = inflater.inflate(R.layout.shoping_list_item, null)
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
+            var selectItemNum = deleteItem(view,position)
         } else {
             view = convertView
             viewHolder = view.tag as ViewHolder
@@ -53,5 +52,24 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
 
     override fun getCount(): Int {
         return items.size
+    }
+    //checkboxが押された時のpositionを配列に入れる
+    fun deleteItem(view: View, position: Int): List<Int> {
+        val selectItemNum: MutableList<Int> = mutableListOf()
+        val checkBox = view.findViewById<CheckBox>(R.id.shoppingListCheckBox)
+        checkBox.setOnClickListener{
+            val check = checkBox.isChecked()
+            if (check) {
+                selectItemNum.add(position)
+            }else{
+                for (i in selectItemNum){
+                    if (i == position) {
+                        selectItemNum.remove(i)
+                        break
+                    }
+                }
+            }
+        }
+        return selectItemNum
     }
 }
