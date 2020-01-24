@@ -3,23 +3,34 @@ package com.example.kanazawaapp_2019
 
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
-import java.lang.Exception
+import androidx.fragment.app.Fragment
+import com.google.zxing.integration.android.IntentIntegrator
+import kotlinx.android.synthetic.main.activity_food_addition.*
+import java.io.BufferedInputStream
+//import sun.jvm.hotspot.utilities.IntArray
+import java.io.IOException
+
 
 /**
  * A simple [Fragment] subclass.
  */
 class CameraSelectionFragment : Fragment() {
-val READRE_REQUEST_CODE : Int =42
+    val READRE_REQUEST_CODE : Int =42
+
+    private lateinit var display :ImageView
+    private lateinit var uri: Uri
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +38,6 @@ val READRE_REQUEST_CODE : Int =42
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_camera_selection, container, false)
-
     }
 
     override fun onStart() {
@@ -50,17 +60,67 @@ val READRE_REQUEST_CODE : Int =42
     }
     //バーコードボタンの挙動
     fun clickBarcode(){
-
+        IntentIntegrator.forSupportFragment(this).initiateScan()
+        var integrator = IntentIntegrator(activity)
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES)
+        integrator.setPrompt("Scan a barcode")
+        integrator.setCameraId(0)  // Use a specific camera of the device
+        integrator.setBeepEnabled(false)
+        integrator.setBarcodeImageEnabled(true)
+        integrator.initiateScan()
     }
 
     //カメラボタンの挙動
     fun clickCamera(){
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{ takePictureIntent ->
             takePictureIntent.resolveActivity(this.context!!.packageManager)?.also {
-                startActivityForResult(takePictureIntent,1)
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE).apply {
+                    addCategory(Intent.CATEGORY_DEFAULT)
+                }
+                    startActivityForResult(intent, 1)
             }?:Toast.makeText(this.context,"カメラを扱うアプリがありません",Toast.LENGTH_LONG).show()
         }
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        display = activity!!.displayPhoto
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+        when {
+            result != null -> Log.d("バーコード",result.toString())
+            else -> super.onActivityResult(requestCode, resultCode, data)
+        }
+
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            val imageBitmap = data!!.extras!!.get("data") as Bitmap
+            display.setImageBitmap(imageBitmap)
+            Log.d("写真",imageBitmap.toString())
+
+        }
+        //カメラロールの画像を出力
+        else if(requestCode == READRE_REQUEST_CODE){
+            try {
+                data?.data?.also { uri ->
+                    val inputStream = this.context!!.contentResolver?.openInputStream(uri)
+                    val buffered = BufferedInputStream(inputStream)
+                    val opt = BitmapFactory.Options()
+                    opt.inJustDecodeBounds = false
+                    val image = BitmapFactory.decodeStream(buffered,null,opt)
+                    inputStream!!.close()
+                    display.setImageBitmap(image)
+                    Log.d("写真",image.toString())
+            }
+            } catch (e: Exception) {
+                Log.d("写真","失敗")
+            }
+        }
+    }
+
     //カメラロールボタンの挙動
     fun clickCameraRoll(){
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
@@ -68,23 +128,5 @@ val READRE_REQUEST_CODE : Int =42
             type = "image/*"
         }
         startActivityForResult(intent,READRE_REQUEST_CODE)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode==Activity.RESULT_OK){
-            Log.d("カメラロール","succsess")
-        }
-        when (requestCode){
-            READRE_REQUEST_CODE -> {
-                try {
-                    data?.data?.also { uri ->
-                        Log.d("カメラロール",uri.toString())
-                    }
-                }catch (e: Exception){
-
-                }
-            }
-        }
     }
 }

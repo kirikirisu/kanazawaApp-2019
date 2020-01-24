@@ -94,7 +94,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="19dp"
         android:layout_marginBottom="546dp"
-        android:background="#fff" />
+        android:textColor="@color/graytransparent"
+        android:background="@color/colorWhite" />
 
     <!--期限ピッカー-->
     <Button
@@ -210,6 +211,15 @@
 
     <!--フラグメントの表示-->
 
+    <ImageView
+        android:id="@+id/displayPhoto"
+        android:layout_width="123dp"
+        android:layout_height="98dp"
+        android:layout_marginEnd="242dp"
+        android:layout_marginRight="242dp"
+        android:layout_marginBottom="545dp"
+        android:background="@color/colorPrimaryDark" />
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -217,7 +227,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </FrameLayout>
 
     <!--保存食追加ボタン-->
 <!--    <ImageButton-->
