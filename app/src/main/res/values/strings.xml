@@ -10,7 +10,7 @@
     <string name="howToNotificationSettingsHeader">通知設定の仕方</string>
     <string name="howToLookShelterHeader">避難所の見方</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
-    <string name="datePiceker">賞味期限</string>
+    <string name="datePicker">賞味期限</string>
     <string name="pickerText">Date</string>
     <string name="next">次へ</string>
     <string name="startApp">アプリを始める</string>
