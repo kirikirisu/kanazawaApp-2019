@@ -55,17 +55,6 @@
         app:layout_constraintTop_toBottomOf="@+id/initialSettingDescription"
         android:text="@string/setNumber" />
 
-    <TextView
-        android:id="@+id/human"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:gravity="center"
-        android:text="@string/human"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/humanNumber"
-        app:layout_constraintStart_toEndOf="@+id/humanNumber"
-        app:layout_constraintTop_toTopOf="@+id/humanNumber" />
-
     <EditText
         android:id="@+id/humanNumber"
         android:layout_width="43dp"
@@ -78,16 +67,29 @@
         app:layout_constraintTop_toBottomOf="@+id/setNumber" />
 
     <TextView
+        android:id="@+id/human"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:text="@string/human"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/humanNumber"
+        app:layout_constraintStart_toEndOf="@+id/humanNumber"
+        app:layout_constraintTop_toTopOf="@+id/humanNumber" />
+
+    <TextView
         android:id="@+id/childrenHandling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:layout_marginBottom="24dp"
         android:gravity="center"
+        android:text="@string/childrenHandling"
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/moveNextBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/humanNumber"
-        android:text="@string/childrenHandling" />
+        app:layout_constraintTop_toBottomOf="@+id/humanNumber" />
 
     <TextView
         android:id="@+id/nextBtnLabel"
@@ -103,7 +105,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.05"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.888"
