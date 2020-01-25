@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#F2B451</color>
-    <color name="tabBackgroundSelected">#FFFFFF</color>
+    <color name="tabBackgroundSelected">#F2B451</color>
+    <color name="tabBackgroundSelectedFoodList">#FFFFFF</color>
     <color name="tabBackgroundUnselected">#C2C3C4</color>
     <color name="colorSecondary">#51E6F2</color>
     <color name="colorPrimaryDark">#CE8321</color>
