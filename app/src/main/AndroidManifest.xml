@@ -15,7 +15,7 @@
         <activity android:name=".HowToLookListActivity" />
         <activity android:name=".HowToAddFoodActivity" />
         <activity android:name=".InitialNotificationSettingActivity" />
-        <activity android:name=".InitialNumberSettingActivity" />
+        <activity android:name=".GettingStartMainActivity" />
         <activity
             android:name=".SecondDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
@@ -23,7 +23,7 @@
             android:name=".FirstDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".GettingStartMainActivity">
+            android:name=".InitialNumberSettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
