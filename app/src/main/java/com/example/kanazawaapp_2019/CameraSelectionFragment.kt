@@ -16,9 +16,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.github.kittinunf.fuel.httpGet
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_food_addition.*
 import java.io.BufferedInputStream
+import com.github.kittinunf.result.Result;
+
 //import sun.jvm.hotspot.utilities.IntArray
 import java.io.IOException
 
@@ -92,7 +95,25 @@ class CameraSelectionFragment : Fragment() {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
 
         when {
-            result != null -> Log.d("バーコード",result.toString())
+            result != null -> {
+                Log.d("バーコード",result.toString())
+
+                val httpAsync = "https://shopping.yahooapis.jp/ShoppingWebService/V1/itemSearch?appid=dj00aiZpPUdwOFNBamp0S0FjeiZzPWNvbnN1bWVyc2VjcmV0Jng9MjU-&jan=${result.contents}"
+                    .httpGet()
+                    .responseString { request, response, result ->
+                        when (result) {
+                            is Result.Failure -> {
+                                val ex = result.getException()
+                                Log.d("バーコード",ex.toString())
+                            }
+                            is Result.Success -> {
+                                val data = result.get()
+                                Log.d("バーコード",data.)
+                            }
+                        }
+                    }
+                httpAsync.join()
+            }
             else -> super.onActivityResult(requestCode, resultCode, data)
         }
 

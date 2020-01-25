@@ -60,14 +60,14 @@
     <!--保存食写真-->
     <ImageButton
         android:id="@+id/photoView"
-        android:layout_width="123dp"
-        android:layout_height="98dp"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="242dp"
-        android:layout_marginRight="242dp"
-        android:layout_marginBottom="545dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginRight="240dp"
+        android:layout_marginBottom="579dp"
         android:background="@color/colorWhite"
         app:srcCompat="@drawable/camera_icon" />
 
@@ -215,9 +215,7 @@
         android:id="@+id/displayPhoto"
         android:layout_width="123dp"
         android:layout_height="98dp"
-        android:layout_marginEnd="242dp"
         android:layout_marginRight="242dp"
-        android:layout_marginBottom="545dp"
         android:background="@color/colorPrimaryDark" />
 
     <FrameLayout
