@@ -65,6 +65,6 @@
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:layout_margin="10dp"
-        android:src="@drawable/cycle"
+        android:src="@drawable/sample_drink"
         android:layout_alignParentRight="true" />
 </RelativeLayout>

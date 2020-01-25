@@ -29,7 +29,7 @@ class SnackListAdapter(private var context: Context, private var items: ArrayLis
         val viewHolder: ViewHolder
         if (convertView == null) {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            view = inflater.inflate(R.layout.drink_list_row,parent,false)
+            view = inflater.inflate(R.layout.snack_list_row,parent,false)
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
         } else {
