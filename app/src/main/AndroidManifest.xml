@@ -23,9 +23,5 @@
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ShoppingListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
     </application>
 </manifest>
