@@ -9,14 +9,39 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        app:titleTextColor="@color/colorWhite"
-        app:title="@string/foodAdditionHeader"/>
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/foodAdditionHeader"
+        app:titleTextColor="@color/colorWhite" />
 
+<!--&lt;!&ndash;テキストピッカー&ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/textView1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:textSize="30dp"/>-->
 
+<!--    <NumberPicker-->
+<!--        android:id="@+id/numPicker"-->
+<!--        android:layout_width="205dp"-->
+<!--        android:layout_height="96dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        tools:layout_editor_absoluteX="200dp"-->
+<!--        tools:layout_editor_absoluteY="103dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button1"-->
+<!--        android:layout_width="192dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:text="OK"-->
+<!--        tools:layout_editor_absoluteX="200dp"-->
+<!--        tools:layout_editor_absoluteY="195dp" />-->
+<!--    &lt;!&ndash;    &ndash;&gt;-->
     <View
         android:id="@+id/boaderLine2"
         android:layout_width="match_parent"
@@ -78,8 +103,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="128dp"
         android:ems="10"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/boaderLine2"
@@ -91,8 +116,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="536dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="396dp"
         android:background="@color/colorWhite"
         android:textColor="@color/graytransparent"
         app:layout_constraintBottom_toBottomOf="parent"
