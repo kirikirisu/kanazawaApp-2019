@@ -15,6 +15,7 @@
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".FoodAdditionActivity"
                 android:label="@string/foodAdditionHeader">
@@ -23,11 +24,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+=======
+        android:theme="@style/AppTheme">
+        <activity android:name=".SettingActivity"></activity>
+>>>>>>> a5e3b5039ab103e892e01e95242dd3a928655a9a
         <activity android:name=".HowToLookShelterActivity"></activity>
         <activity android:name=".HowToNotificationSettingsActivity" />
         <activity android:name=".HowToLookFirstScreenActivity" />
         <activity android:name=".HowToLookListActivity" />
         <activity android:name=".HowToAddFoodActivity" />
+<<<<<<< HEAD
         <activity
             android:name=".SecondDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
@@ -36,6 +42,19 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".GettingStartMainActivity">
+=======
+        <activity android:name=".FirstDescriptionActivity" />
+        <activity android:name=".GettingStartMainActivity" />
+        <activity android:name=".PreservedFoodListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+>>>>>>> a5e3b5039ab103e892e01e95242dd3a928655a9a
+        </activity>
+        <activity
+            android:name=".ShoppingListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
     </application>
 </manifest>
