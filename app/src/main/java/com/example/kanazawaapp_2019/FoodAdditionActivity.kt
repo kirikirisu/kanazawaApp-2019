@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_food_addition.*
+import java.time.Month
 import java.util.*
 
 class FoodAdditionActivity : AppCompatActivity(){
@@ -77,7 +78,7 @@ class FoodAdditionActivity : AppCompatActivity(){
         //Calender
         val calender = Calendar.getInstance()
         val year = calender.get(Calendar.YEAR)
-        val month = calender.get(Calendar.MONTH)
+        val month = calender.get(Calendar.DAY_OF_MONTH)
         val day = calender.get(Calendar.DAY_OF_MONTH)
 
         //button click to show DatePicker
@@ -86,8 +87,9 @@ class FoodAdditionActivity : AppCompatActivity(){
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{
                     view ,mYear ,mMonth ,mDay ->
                 //set TextView
-                dateText.setText(""+mYear+"/"+mMonth+"/"+mDay)
+                dateText.setText(""+mYear+"/"+(mMonth+1)+"/"+mDay)
             },year,month,day)
+            Log.d("テスト",dpd.toString())
                 //show dialog
             dpd.show()
         }
@@ -134,6 +136,11 @@ class FoodAdditionActivity : AppCompatActivity(){
            }
        }
     }
+
+    //保存場所選択ボタンの処理
+//    override fun clickSpot(){
+//
+//    }
 
     //戻るボタンの処理
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

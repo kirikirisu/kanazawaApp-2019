@@ -108,7 +108,7 @@ class CameraSelectionFragment : Fragment() {
                             }
                             is Result.Success -> {
                                 val data = result.get()
-                                Log.d("バーコード",data.)
+                                Log.d("バーコード",data)
                             }
                         }
                     }
