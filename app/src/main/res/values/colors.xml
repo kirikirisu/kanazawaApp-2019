@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#F2B451</color>
+    <color name="tabBackgroundSelected">#F2B451</color>
+    <color name="tabBackgroundSelectedFoodList">#FFFFFF</color>
+    <color name="tabBackgroundUnselected">#C2C3C4</color>
     <color name="colorSecondary">#51E6F2</color>
     <color name="colorPrimaryDark">#CE8321</color>
     <color name="colorGray">#707070</color>
@@ -8,4 +11,8 @@
     <color name="graytransparent">#33000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorAccent">#F28351</color>
+    <color name="colorDrink">#47E3EF</color>
+    <color name="colorStapleFood">#EEA641</color>
+    <color name="colorSnack">#ED6E40</color>
+    <color name="white">#FFFFFF</color>
 </resources>
