@@ -42,6 +42,9 @@ class CameraSelectionFragment : Fragment() {
     private lateinit var display :ImageView
     private lateinit var uri: Uri
 
+    var productNames: ArrayList<String> = arrayListOf()
+    var productImgs: ArrayList<String> = arrayListOf()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -99,6 +102,7 @@ class CameraSelectionFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        // バーコードで読みっとたデータ
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
 
         when {
@@ -125,6 +129,7 @@ class CameraSelectionFragment : Fragment() {
             else -> super.onActivityResult(requestCode, resultCode, data)
         }
 
+        // カメラで撮影した画像の出力
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             val imageBitmap = data!!.extras!!.get("data") as Bitmap
             display.setImageBitmap(imageBitmap)
@@ -165,17 +170,29 @@ class CameraSelectionFragment : Fragment() {
                 if(eventType == XmlPullParser.START_TAG) {
                     val name = parser.name
                     var i: Int
-                    // Log.d("バーコード", name.toString())
+
                     if(name.toString() == "Name"){
                         eventType = parser.next()
                         if(eventType == XmlPullParser.TEXT) {
-                            val count = parser.text
-                        Log.d("debug", count)
+                            val productName = parser.text
+                            productNames.add(productName)
+                        }
+                    }
+
+                    if(name == "Medium") {
+                        eventType = parser.next()
+                        if(eventType == XmlPullParser.TEXT) {
+                           val productImg = parser.text
+                            productImgs.add(productImg)
                         }
                     }
                 }
                 eventType = parser.next()
             }
+            // バーコードがら商品名と画像のURL取得完了
+            Log.d("バーコード", productNames[0])
+            Log.d("バーコード", productImgs[0])
+
         } catch (Extension: IOException) {
             Log.d("XmlPullParserSample", "Error");
         }
