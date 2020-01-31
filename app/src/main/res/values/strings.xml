@@ -21,6 +21,9 @@
     <string name="notificationDateTwo">日前に通知する</string>
     <string name="welcomeMsg">ようこそ\nStockSupporterへ</string>
     <string name="appName">kanazawaApp-2019</string>
+    <string name="shoppingListHeaderText">買い物リスト</string>
+    <string name="shoppingListDeleteButton">削除</string>
+    <string name="PreservedFoodsListHeader">保存食一覧</string>
     <string name="gettingStartMainHeader">簡単入門</string>
     <string name="howToAddFoodHeader">保存食追加の仕方</string>
     <string name="howToLookListHeader">リストの見方</string>
@@ -28,4 +31,13 @@
     <string name="howToNotificationSettingsHeader">通知設定の仕方</string>
     <string name="howToLookShelterHeader">避難所の見方</string>
     <string name="descriptionMsg">このアプリは\nローリングストックを\nサポートするアプリです</string>
+    <string name="datePicker">賞味期限</string>
+    <string name="pickerText">Date</string>
+    <string name="indicationStockQuantity">xL(飲料水)\ny食(主食)\nz個(間食)</string>
+    <string name="surviveDate">日分(n人分) </string>
+    <string name="number">人数</string>
+    <string name="notification">通知</string>
+    <string name="setting">設定</string>
+    <string name="foodList">保存食一覧</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
