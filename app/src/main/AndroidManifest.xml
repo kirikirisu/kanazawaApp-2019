@@ -15,7 +15,6 @@
         <activity android:name=".HowToLookFirstScreenActivity" />
         <activity android:name=".HowToLookListActivity" />
         <activity android:name=".HowToAddFoodActivity" />
-        <activity android:name=".PreservedFoodListActivity" />
         <activity android:name=".GettingStartMainActivity" />
         <activity
             android:name=".FourthDescriptionActivity"
@@ -33,6 +32,14 @@
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".PreservedFoodListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN"></action>-->
+<!--                <category android:name="android.intent.category.LAUNCHER"></category>-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".ShoppingListActivity"
