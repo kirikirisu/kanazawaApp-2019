@@ -12,7 +12,11 @@ class PreservedFoodListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preserved_foods_list)
 
-        setSupportActionBar(toolBar)
+        setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.setHomeButtonEnabled(true)
+        }?:IllegalAccessError("toolbar cannot be,null")
         // set adapter
         val fragmentAdapter = PagerAdapterFoodList(supportFragmentManager)
         viewPager.adapter = fragmentAdapter
