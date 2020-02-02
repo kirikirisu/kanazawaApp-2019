@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentTransaction
+import kotlinx.android.synthetic.main.shoping_list_item.*
 
-class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>) : BaseAdapter() {
+class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>, fragmentTransaction: FragmentTransaction) : BaseAdapter() {
 
     private class ViewHolder(row: View?) {
         var shoppingListItemImageView: ImageView? = null
@@ -29,6 +31,14 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
         if (convertView == null) {
             val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.shoping_list_item, null)
+            activity.tapLayout.setOnClickListener {
+                val fragment = shoppingSiteFragment()
+                val fragmentManager = this.supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.container, fragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
         } else {

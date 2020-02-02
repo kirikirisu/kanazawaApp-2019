@@ -35,16 +35,6 @@ class ShoppingListActivity : AppCompatActivity() {
         var adapter = ShoppingListAdapter(this, generateData())
         ListView?.adapter = adapter
         adapter.notifyDataSetChanged()
-
-        //ショッピングサイトへ遷移するのフラグメントを呼び出す
-        shoppingListView.setOnItemClickListener { _: AdapterView<*>, _: View, _: Int, _: Long ->
-            val fragment = shoppingSiteFragment()
-            val fragmentManager = this.supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.container, fragment)
-                .addToBackStack(null)
-                .commit()
-        }
     }
     private fun generateData(): ArrayList<ShoppingItem> {
         var result = ArrayList<ShoppingItem>()
