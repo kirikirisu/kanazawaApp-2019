@@ -43,6 +43,5 @@
         <activity android:name=".PreservedFoodListActivity" />
         <activity android:name=".ShoppingListActivity" />
 
->>>>>>> 414133bd5cf4e87b3ccf80267191d4671cea5c5a
     </application>
 </manifest>

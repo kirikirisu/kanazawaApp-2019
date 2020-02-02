@@ -2,40 +2,29 @@ package com.example.kanazawaapp_2019
 
 import android.content.ContentValues
 import android.os.Bundle
+import android.provider.BaseColumns
 import android.util.Log
-import android.view.View
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kanazawaapp_2019.DB.PreservedFoodDBHelper
 import kotlinx.android.synthetic.main.activity_sql_sample.*
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class SqlSampleActivity: AppCompatActivity() {
-    private val dbName: String = "StockSupporterDB"
-    private val tableName: String = "PreservedFoodTable"
-    private val dbVersion: Int = 1
-    private val arrayListPreservedFoodId: ArrayList<Int> = arrayListOf()
-    private val arrayListFoodName: ArrayList<String> = arrayListOf()
-    private val arrayListDeadline: ArrayList<Int> = arrayListOf()
-    private val arrayListStorageLocation: ArrayList<String> = arrayListOf()
-    private val arrayListQuantity: ArrayList<Int> = arrayListOf()
-    private val arrayListCreatedAt: ArrayList<String> = arrayListOf()
-    private val arrayListCommercial: ArrayList<String> = arrayListOf()
-
     private var editFoodName: String = ""
     private var editDeadline: String = ""
     private var editStorageLocation: String = ""
     private var editQuantity: Int = 0
-    private var isCommercial: String = ""
     private var createdAt = ""
+    private var isCommercial: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sql_sample)
 
         add_button.setOnClickListener {
+            Log.d("pushed", "押した")
             if(edit_food_name.text != null && edit_deadline != null && edit_storage_location != null && editQuantity != null) {
                 editFoodName = edit_food_name.text.toString()
                 editDeadline = edit_deadline.text.toString()
@@ -43,12 +32,13 @@ class SqlSampleActivity: AppCompatActivity() {
                 isCommercial = commercial_or_not.isChecked().toString()
 
                 if(edit_quantity.text.toString() != "" ){
+                    Log.d("型", "${edit_quantity.text::class.java}")
                     editQuantity = edit_quantity.text.toString().toInt()
                 }
             }
             getCreatedAt()
 
-            insertData( editFoodName, editDeadline, editStorageLocation, editQuantity, createdAt,isCommercial)
+            insertData(editFoodName, editDeadline, editStorageLocation, editQuantity, createdAt, isCommercial)
             selectData()
         }
     }
@@ -62,17 +52,18 @@ class SqlSampleActivity: AppCompatActivity() {
 
     private fun insertData(editFoodName: String, editDeadline: String, editStorageLocation: String, editQuantity: Int, createdAt: String, isCommercial: String){
         try{
-            val dbHelper = PreservedFoodDBHelper(applicationContext, dbName, null, dbVersion)
-            val database = dbHelper.writableDatabase
+            val dbHelper = PreservedFoodDBHelper(applicationContext)
+            val db = dbHelper.writableDatabase
+            val values = ContentValues().apply {
+                put("${DBContract.PreservedFoodEntry.FOOD_NAME}", editFoodName)
+                put("${DBContract.PreservedFoodEntry.DEADLINE}", editDeadline)
+                put("${DBContract.PreservedFoodEntry.STORAGE_LOCATION}", editStorageLocation)
+                put("${DBContract.PreservedFoodEntry.QUANTITY}", editQuantity)
+                put("${DBContract.PreservedFoodEntry.CREATED_AT}", createdAt)
+                put("${DBContract.PreservedFoodEntry.COMMERICAL}", isCommercial)
+            }
 
-            val values = ContentValues()
-            values.put("food_name", editFoodName)
-            values.put("deadline", editDeadline)
-            values.put("storage_location", editStorageLocation)
-            values.put("quantity", editQuantity)
-            values.put("created_at", createdAt)
-            values.put("commercial", isCommercial)
-            database.insertOrThrow(tableName, null, values)
+            db.insert(DBContract.PreservedFoodEntry.TABLE_NAME, null, values)
         }catch(exception: Exception){
             Log.e("Log", exception.toString())
         }
@@ -80,30 +71,47 @@ class SqlSampleActivity: AppCompatActivity() {
 
     private fun selectData() {
         try{
-            arrayListPreservedFoodId.clear()
-            arrayListFoodName.clear()
-            arrayListDeadline.clear()
-            arrayListStorageLocation.clear()
-            arrayListQuantity.clear()
+            val PreservedFoodIds = mutableListOf<Long>()
+            val FoodNames = mutableListOf<Long>()
+            val Deadlines = mutableListOf<Long>()
+            val StorageLocations = mutableListOf<Long>()
+            val Quantities = mutableListOf<Long>()
+            val arrayListCreatedAt = mutableListOf<Long>()
+            val Commercials = mutableListOf<Long>()
+
+            PreservedFoodIds.clear()
+            FoodNames.clear()
+            Deadlines.clear()
+            StorageLocations.clear()
+            Quantities.clear()
             arrayListCreatedAt.clear()
-            arrayListCommercial.clear()
+            Commercials.clear()
 
-            val dbHelper = PreservedFoodDBHelper(applicationContext, dbName, null, dbVersion)
-            val database = dbHelper.readableDatabase
+            val dbHelper = PreservedFoodDBHelper(applicationContext)
+            val db = dbHelper.readableDatabase
 
-            val sql = "select * from PreservedFoodTable"
-            val cursor = database.rawQuery(sql, null)
-            if(cursor.count > 0){
-                cursor.moveToFirst()
-                while (!cursor.isAfterLast){
-                    arrayListPreservedFoodId.add(cursor.getInt(0))
-                    arrayListFoodName.add(cursor.getString(1))
-                    arrayListDeadline.add(cursor.getInt(2))
-                    arrayListStorageLocation.add(cursor.getString(3))
-                    arrayListCreatedAt.add(cursor.getString(4))
-                    arrayListQuantity.add(cursor.getInt(5))
-                    arrayListCommercial.add(cursor.getString(6))
-                    cursor.moveToNext()
+            val sql = "select * from ${DBContract.PreservedFoodEntry.TABLE_NAME}"
+            val cursor = db.rawQuery(sql, null)
+            with(cursor) {
+                if (count > 0) {
+                    moveToFirst()
+                    while (moveToNext()) {
+                        val PreservedFoodId = getLong(getColumnIndexOrThrow(BaseColumns._ID))
+                        val FoodName = getLong(getColumnIndexOrThrow(DBContract.PreservedFoodEntry.FOOD_NAME))
+                        val Deadline = getLong(getColumnIndexOrThrow(DBContract.PreservedFoodEntry.DEADLINE))
+                        val StorageLocation = getLong(getColumnIndexOrThrow(DBContract.PreservedFoodEntry.STORAGE_LOCATION))
+                        val Quantity = getLong(getColumnIndexOrThrow(DBContract.PreservedFoodEntry.QUANTITY))
+                        val CreatedAt = getLong(getColumnIndexOrThrow(DBContract.PreservedFoodEntry.CREATED_AT))
+                        val Commercial = getLong(getColumnIndexOrThrow(DBContract.PreservedFoodEntry.COMMERICAL))
+
+                        PreservedFoodIds.add(PreservedFoodId)
+                        FoodNames.add(FoodName)
+                        Deadlines.add(Deadline)
+                        StorageLocations.add(StorageLocation)
+                        Quantities.add(Quantity)
+                        arrayListCreatedAt.add(CreatedAt)
+                        Commercials.add(Commercial)
+                    }
                 }
             }
         }catch(exeption: Exception) {
