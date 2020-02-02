@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.kanazawaapp_2019">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
     <application
+        android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
-
-        <activity android:name=".SettingActivity"></activity>
-        <activity android:name=".HowToLookShelterActivity"></activity>
-        <activity android:name=".HowToNotificationSettingsActivity" />
-        <activity android:name=".HowToLookFirstScreenActivity" />
-        <activity android:name=".HowToLookListActivity" />
-        <activity android:name=".HowToAddFoodActivity" />
-        <activity android:name=".FirstDescriptionActivity" />
-        <activity android:name=".GettingStartMainActivity" />
-        <activity android:name=".PreservedFoodListActivity" />
-        <activity android:name=".GettingStartMainActivity" />
-        <activity android:name=".ShoppingListActivity" />
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity android:name=".SqlSampleActivity">
             <intent-filter>
@@ -29,5 +24,25 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".FoodAdditionActivity"
+                android:label="@string/foodAdditionHeader">
+        </activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".HowToLookShelterActivity" />
+        <activity android:name=".HowToNotificationSettingsActivity" />
+        <activity android:name=".HowToLookFirstScreenActivity" />
+        <activity android:name=".HowToLookListActivity" />
+        <activity android:name=".HowToAddFoodActivity" />
+        <activity android:name=".GettingStartMainActivity" />
+        <activity android:name=".FourthDescriptionActivity" />
+        <activity android:name=".ThirdDescriptionActivity" />
+        <activity android:name=".SecondDescriptionActivity" />
+        <activity android:name=".FirstDescriptionActivity" />
+        <activity android:name=".InitialNumberSettingActivity" />
+        <activity android:name=".InitialNotificationSettingActivity" />
+        <activity android:name=".PreservedFoodListActivity" />
+        <activity android:name=".ShoppingListActivity" />
+
+>>>>>>> 414133bd5cf4e87b3ccf80267191d4671cea5c5a
     </application>
 </manifest>
