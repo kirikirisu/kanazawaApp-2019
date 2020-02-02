@@ -86,7 +86,7 @@ class FoodAdditionActivity : AppCompatActivity(){
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{
                     view ,mYear ,mMonth ,mDay ->
                 //set TextView
-                dateText.setText(""+mYear+"/"+mMonth+"/"+mDay)
+                dateText.setText(""+mYear+"/"+(mMonth+1)+"/"+mDay)
             },year,month,day)
                 //show dialog
             dpd.show()
