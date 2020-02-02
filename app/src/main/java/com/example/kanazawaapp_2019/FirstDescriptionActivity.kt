@@ -11,4 +11,10 @@ class FirstDescriptionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_description)
     }
+
+    fun toNext(view: View) {
+        val intent = Intent(this, SecondDescriptionActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+    }
 }
