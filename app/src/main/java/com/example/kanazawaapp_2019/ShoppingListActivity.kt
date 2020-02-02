@@ -13,7 +13,7 @@ class ShoppingListActivity : AppCompatActivity() {
 
         //保存食追加ボタンの実装
         shoppingListAddButton.setOnClickListener {
-            val intent = Intent(application, FoodAdditionActivity::class.java)
+//            val intent = Intent(application, FoodAdditionActivity::class.java)
             startActivity(intent)
         }
 
