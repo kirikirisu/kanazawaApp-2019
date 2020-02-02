@@ -38,5 +38,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hintFoodName">商品名</string>
+    <string name="hintDeadline">期限</string>
+    <string name="hintStorageLocation">保存場所</string>
+    <string name="hintQuantity">数量</string>
+    <string name="hintCommercialOrNot">市販かどうか</string>
+    <string name="addButton">追加</string>
 </resources>
 
