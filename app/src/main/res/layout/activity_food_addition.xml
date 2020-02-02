@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,57 +7,66 @@
     android:orientation="vertical"
     android:scrollbarSize="40dp">
 
+    <!-- Toolbarの設定 -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        app:titleTextColor="@color/colorWhite"
-        app:title="@string/foodAdditionHeader"/>
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/foodAdditionHeader"
+        app:titleTextColor="@color/colorWhite" />
 
-    <!--境界線-->
+    <!-- 境界線 -->
     <View
         android:id="@+id/boaderLine"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="415dp"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine2"
+        tools:layout_editor_absoluteX="0dp" />
 
     <View
         android:id="@+id/boaderLine2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="519dp"
-        android:background="@color/colorPrimaryDark" />
+        android:layout_marginBottom="228dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <View
         android:id="@+id/boaderLine3"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="300dp"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine2"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.704"
+        tools:layout_editor_absoluteX="-15dp" />
 
     <View
         android:id="@+id/boaderLine4"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="186dp"
-        android:background="@color/colorPrimaryDark" />
+        android:layout_marginTop="180dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine3"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-15dp" />
 
-    <View
-        android:id="@+id/boaderLine5"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="71dp"
-        android:background="@color/colorPrimaryDark" />
-
-    <!--保存食写真-->
+    <!-- 機能 -->
+    <!-- フラグメント呼び出しボタン -->
     <ImageButton
         android:id="@+id/photoView"
         android:layout_width="125dp"
@@ -65,13 +74,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="240dp"
-        android:layout_marginRight="240dp"
-        android:layout_marginBottom="579dp"
+        android:layout_marginStart="16dp"
         android:background="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayPhoto"
         app:srcCompat="@drawable/camera_icon" />
 
-    <!--保存食名-->
+    <!-- 保存食名 -->
     <EditText
         android:id="@+id/foodName"
         android:layout_width="175dp"
@@ -79,124 +88,85 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="612dp"
+        android:layout_marginStart="50dp"
         android:ems="10"
-        android:inputType="date" />
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/displayPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <!--保存食ジャンル選択ピッカー-->
+    <!-- 保存食の画像表示 -->
+    <ImageView
+        android:id="@+id/displayPhoto"
+        android:layout_width="123dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <!-- 保存食ジャンル選択ピッカー -->
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="546dp"
+        android:layout_marginStart="50dp"
+        android:background="@color/colorWhite"
         android:textColor="@color/graytransparent"
-        android:background="@color/colorWhite" />
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/photoView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.744" />
 
-    <!--期限ピッカー-->
+    <!-- カレンダー呼び出しボタン -->
     <Button
         android:id="@+id/DatePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="454dp"
-        android:text="@string/datePiceker" />
+        android:layout_marginEnd="28dp"
+        android:text="@string/datePiceker"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine4"
+        app:layout_constraintVertical_bias="0.469" />
 
+    <!-- 日付出力用 -->
     <TextView
         android:id="@+id/dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="430dp"
-        android:text="@string/pickerText" />
+        android:layout_marginEnd="56dp"
+        android:text="@string/pickerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DatePicker" />
 
-    <!--保存食数量ピッカー-->
-    <NumberPicker
-        android:id="@+id/number_picker"
-        android:layout_width="176dp"
-        android:layout_height="81dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="308dp"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="78dp" />
-
-    <!--記入項目-->
-
-    <TextView
-        android:id="@+id/limitView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="300dp"
-        android:layout_marginRight="300dp"
-        android:layout_marginBottom="441dp"
-        android:text="@string/foodLimit"
-        android:textSize="40dp" />
-
-    <TextView
-        android:id="@+id/quantityView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="301dp"
-        android:layout_marginRight="301dp"
-        android:layout_marginBottom="332dp"
-        android:text="@string/foodQuantity"
-        android:textSize="40dp" />
-
-    <TextView
-        android:id="@+id/commercialView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="304dp"
-        android:layout_marginRight="304dp"
-        android:layout_marginBottom="99dp"
-        android:text="@string/commercialFood"
-        android:textSize="40dp" />
-
-    <TextView
-        android:id="@+id/saveLocationView"
-        android:layout_width="179dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="203dp"
-        android:layout_marginRight="203dp"
-        android:layout_marginBottom="220dp"
-        android:text="@string/foodLocation"
-        android:textSize="40dp" />
-
-    <!--チェックボックス-->
+    <!-- 市販判別チェッカー -->
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="43dp"
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginStart="180dp"
         android:scaleX="2"
-        android:scaleY="2" />
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/commercialView"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine"
+        app:layout_constraintVertical_bias="0.452" />
 
-    <!--場所アイコン-->
+    <!--  保存場所選択ボタン-->
     <ImageButton
         android:id="@+id/stockIcon"
         android:layout_width="wrap_content"
@@ -204,19 +174,86 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:layout_marginBottom="197dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/saveLocationView"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine2"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
-    <!--フラグメントの表示-->
+    <!-- 保存料選択ピッカー -->
+    <NumberPicker
+        android:id="@+id/number_picker"
+        android:layout_width="176dp"
+        android:layout_height="81dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/quantityView"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine3" />
 
-    <ImageView
-        android:id="@+id/displayPhoto"
-        android:layout_width="123dp"
-        android:layout_height="98dp"
-        android:layout_marginRight="242dp"
-        android:background="@color/colorPrimaryDark" />
+    <!-- 項目表示 -->
+    <!-- 期限 -->
+    <TextView
+        android:id="@+id/limitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:text="@string/foodLimit"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine4" />
+
+    <!-- 数量 -->
+    <TextView
+        android:id="@+id/quantityView"
+        android:layout_width="83dp"
+        android:layout_height="53dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:text="@string/foodQuantity"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine3" />
+
+    <!-- 市販 -->
+    <TextView
+        android:id="@+id/commercialView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:text="@string/commercialFood"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine" />
+
+    <!-- 保存場所 -->
+    <TextView
+        android:id="@+id/saveLocationView"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:text="@string/foodLocation"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine2" />
 
     <FrameLayout
         android:id="@+id/container"
@@ -226,8 +263,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
     </FrameLayout>
 
     <!--保存食追加ボタン-->
@@ -257,4 +292,4 @@
 <!--            app:showAsAction="never"/>-->
 <!--    </menu>-->
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
