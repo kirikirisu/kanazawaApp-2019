@@ -21,9 +21,6 @@
         <activity
             android:name=".FirstDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".GettingStartMainActivity">
-        <activity android:name=".FirstDescriptionActivity" />
         <activity android:name=".GettingStartMainActivity" />
         <activity
             android:name=".PreservedFoodListActivity"
