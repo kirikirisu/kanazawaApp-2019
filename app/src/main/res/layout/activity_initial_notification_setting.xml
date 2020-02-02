@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/initialSetting"
+        app:titleTextColor="@color/colorWhite" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/secondToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryLight"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:title="@string/notificationSetting"
+        app:titleTextColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/notificationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/notificationDescription"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondToolbar" />
+
+    <EditText
+        android:id="@+id/savingDays"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/surviveDate"
+        app:layout_constraintTop_toBottomOf="@+id/notificationDescription" />
+
+    <TextView
+        android:id="@+id/surviveDate"
+        android:layout_width="122dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="32dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/savingDays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/savingDays" />
+
+    <TextView
+        android:id="@+id/indicationWaterQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintBottom_toTopOf="@+id/stapleFoodUnit"
+        app:layout_constraintEnd_toStartOf="@+id/waterUnit"
+        app:layout_constraintTop_toTopOf="@+id/waterUnit" />
+
+    <TextView
+        android:id="@+id/waterUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/waterUnit"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surviveDate" />
+
+    <TextView
+        android:id="@+id/indicationStapleFoodQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/stapleFoodUnit"
+        app:layout_constraintEnd_toStartOf="@+id/stapleFoodUnit"
+        app:layout_constraintTop_toTopOf="@+id/stapleFoodUnit" />
+
+    <TextView
+        android:id="@+id/stapleFoodUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/stapleFoodUnit"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterUnit" />
+
+    <TextView
+        android:id="@+id/indicationSnackQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/snackUnit"
+        app:layout_constraintEnd_toStartOf="@+id/snackUnit"
+        app:layout_constraintTop_toBottomOf="@+id/stapleFoodUnit" />
+
+    <TextView
+        android:id="@+id/snackUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/snackUnit"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stapleFoodUnit" />
+
+    <TextView
+        android:id="@+id/notificationTiming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/notificationTiming"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snackUnit" />
+
+    <TextView
+        android:id="@+id/deadlineNotificationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationTiming"
+        android:text="@string/deadlineNotificationDescription" />
+
+    <TextView
+        android:id="@+id/notificationDateOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/notificationDate"
+        app:layout_constraintEnd_toStartOf="@+id/notificationDate"
+        app:layout_constraintTop_toTopOf="@+id/notificationDate"
+        android:text="@string/notificationDateOne" />
+
+    <EditText
+        android:id="@+id/notificationDate"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/moveNextBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deadlineNotificationDescription" />
+
+    <TextView
+        android:id="@+id/notificationDateTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/notificationDate"
+        app:layout_constraintStart_toEndOf="@+id/notificationDate"
+        app:layout_constraintTop_toTopOf="@+id/notificationDate"
+        android:text="@string/notificationDateTwo" />
+
+    <TextView
+        android:id="@+id/startApp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:outlineProvider="none"
+        android:text="@string/startApp"
+        android:textColor="#FFFFFF"
+        android:translationZ="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <Button
+        android:id="@+id/moveNextBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_rounded"
+        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTintMode="multiply"
+        android:onClick="toNext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.90"
+        app:layout_constraintWidth_max="240dp"
+        app:layout_constraintWidth_percent="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

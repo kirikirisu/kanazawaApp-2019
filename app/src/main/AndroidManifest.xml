@@ -27,8 +27,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".FirstDescriptionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".InitialNumberSettingActivity" />
+        <activity android:name=".InitialNotificationSettingActivity" />
         <activity
             android:name=".PreservedFoodListActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

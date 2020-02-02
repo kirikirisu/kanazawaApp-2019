@@ -10,6 +10,7 @@
     <color name="transparent">#00000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorAccent">#F28351</color>
+    <color name="colorPrimaryLight">#ffd571</color>
     <color name="colorDrink">#47E3EF</color>
     <color name="colorStapleFood">#EEA641</color>
     <color name="colorSnack">#ED6E40</color>
