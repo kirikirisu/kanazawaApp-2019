@@ -17,6 +17,12 @@
         <activity android:name=".HowToAddFoodActivity" />
         <activity android:name=".GettingStartMainActivity" />
         <activity
+            android:name=".FourthDescriptionActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".ThirdDescriptionActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
             android:name=".SecondDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
@@ -24,7 +30,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".InitialNumberSettingActivity" />
         <activity android:name=".InitialNotificationSettingActivity" />
-        <activity android:name=".PreservedFoodListActivity">
+        <activity
+            android:name=".PreservedFoodListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
