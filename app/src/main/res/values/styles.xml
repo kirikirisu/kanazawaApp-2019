@@ -2,4 +2,9 @@
 
     <!-- Base application theme. -->
 
+
+    <style name="tabTitleText" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
 </resources>
