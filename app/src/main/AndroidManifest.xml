@@ -8,14 +8,13 @@
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".SettingActivity"></activity>
         <activity android:name=".HowToLookShelterActivity"></activity>
         <activity android:name=".HowToNotificationSettingsActivity" />
         <activity android:name=".HowToLookFirstScreenActivity" />
         <activity android:name=".HowToLookListActivity" />
         <activity android:name=".HowToAddFoodActivity" />
-        <activity android:name=".InitialNotificationSettingActivity" />
         <activity android:name=".GettingStartMainActivity" />
         <activity
             android:name=".SecondDescriptionActivity"
@@ -23,8 +22,8 @@
         <activity
             android:name=".FirstDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".InitialNumberSettingActivity" />
+        <activity android:name=".InitialNumberSettingActivity" />
+        <activity android:name=".InitialNotificationSettingActivity" />
         <activity android:name=".PreservedFoodListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>

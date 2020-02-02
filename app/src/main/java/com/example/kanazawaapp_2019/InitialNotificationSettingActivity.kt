@@ -88,7 +88,7 @@ class InitialNotificationSettingActivity : AppCompatActivity() {
             if (isValid) {
                 val notificationDate = Integer.parseInt(number)
 
-                val intent = Intent(this, InitialNotificationSettingActivity::class.java)//ここは後々、移動先である保存食一覧画面にする。
+                val intent = Intent(this, PreservedFoodListActivity::class.java)
                 intent.putExtra("notificationDate",notificationDate)
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
