@@ -14,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -41,9 +42,11 @@ class CameraSelectionFragment : Fragment() {
 
     private lateinit var display :ImageView
     private lateinit var uri: Uri
+    private lateinit var photoView: ImageButton
 
     var productNames: ArrayList<String> = arrayListOf()
     var productImgs: ArrayList<String> = arrayListOf()
+    lateinit var imageBitmap: Bitmap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -97,7 +100,7 @@ class CameraSelectionFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        display = activity!!.displayPhoto
+        photoView = activity!!.photoView
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -131,8 +134,8 @@ class CameraSelectionFragment : Fragment() {
 
         // カメラで撮影した画像の出力
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
-            val imageBitmap = data!!.extras!!.get("data") as Bitmap
-            display.setImageBitmap(imageBitmap)
+            imageBitmap = data!!.extras!!.get("data") as Bitmap
+            photoView.setImageBitmap(imageBitmap)
             Log.d("写真",imageBitmap.toString())
 
         }
@@ -144,10 +147,10 @@ class CameraSelectionFragment : Fragment() {
                     val buffered = BufferedInputStream(inputStream)
                     val opt = BitmapFactory.Options()
                     opt.inJustDecodeBounds = false
-                    val image = BitmapFactory.decodeStream(buffered,null,opt)
+                    imageBitmap = BitmapFactory.decodeStream(buffered,null,opt) as Bitmap
                     inputStream!!.close()
-                    display.setImageBitmap(image)
-                    Log.d("写真",image.toString())
+                    photoView.setImageBitmap(imageBitmap)
+                    Log.d("写真",imageBitmap.toString())
             }
             } catch (e: Exception) {
                 Log.d("写真","失敗")
