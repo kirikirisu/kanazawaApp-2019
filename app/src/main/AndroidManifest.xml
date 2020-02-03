@@ -3,28 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.kanazawaapp_2019">
 
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera"
+
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
-    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
     <application
-        android:hardwareAccelerated="true"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/appName"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".FoodAdditionActivity"
-                android:label="@string/foodAdditionHeader">
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/NoActionBar"></activity>
+        <activity
+            android:name=".PreservedFoodListActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingActivity"></activity>
-        <activity android:name=".HowToLookShelterActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".HowToLookShelterActivity" />
         <activity android:name=".HowToNotificationSettingsActivity" />
         <activity android:name=".HowToLookFirstScreenActivity" />
         <activity android:name=".HowToLookListActivity" />
@@ -32,26 +42,21 @@
         <activity android:name=".GettingStartMainActivity" />
         <activity
             android:name=".FourthDescriptionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ThirdDescriptionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".SecondDescriptionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".FirstDescriptionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".InitialNumberSettingActivity" />
         <activity android:name=".InitialNotificationSettingActivity" />
         <activity
-            android:name=".PreservedFoodListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-        <activity
             android:name=".ShoppingListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
+
 </manifest>
