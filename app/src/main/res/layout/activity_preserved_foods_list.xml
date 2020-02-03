@@ -11,18 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<!--        <com.google.android.material.navigation.NavigationView-->
-<!--            android:id="@+id/nav_view"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_gravity="start"-->
-<!--            android:fitsSystemWindows="true"-->
-<!--            app:headerLayout="@layout/nav_header_menu"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/toolBar"-->
-<!--            app:layout_constraintHorizontal_bias="0.5"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:menu="@menu/activity_menu_drawer"/>-->
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
@@ -139,6 +127,12 @@
             app:srcCompat="@drawable/plus_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <include layout="@layout/activity_menu"/>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_menu"
+        app:menu="@menu/activity_menu_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
