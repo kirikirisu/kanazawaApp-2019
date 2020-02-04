@@ -255,41 +255,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine2" />
 
+    <!-- Fragment -->
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!--保存食追加ボタン-->
-<!--    <ImageButton-->
-<!--        android:id="@+id/additionButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        android:layout_marginEnd="17dp"-->
-<!--        android:layout_marginRight="17dp"-->
-<!--        android:background="#FDAB4B"-->
-<!--        app:srcCompat="@drawable/add_food" />-->
-
-<!--    <menu xmlns:android="http://schemas.android.com/apk/res/android" >-->
-<!--        <item-->
-<!--            android:id="@+id/action_addtionBtn"-->
-<!--            android:con="drawable/add_food.png_48dp"-->
-<!--            android:titele="@string/action_addition"-->
-<!--            app:showAsAction="ifRoom" />-->
-
-<!--        <item-->
-<!--            android:id="@+id/action_settings"-->
-<!--            android:title="@string/action_settings"-->
-<!--            app:showAsAction="never"/>-->
-<!--    </menu>-->
+<!-- 保存食追加ボタン -->
+    <Button
+        android:id="@+id/additionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/foodAddition"
+        android:textSize="25dp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:srcCompat="@drawable/add_food" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
