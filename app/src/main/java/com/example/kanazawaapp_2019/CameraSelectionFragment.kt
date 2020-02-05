@@ -13,15 +13,14 @@ import android.util.Xml
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.github.kittinunf.fuel.httpGet
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_food_addition.*
 import java.io.BufferedInputStream
 import com.github.kittinunf.result.Result;
+import com.squareup.picasso.Picasso
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 
@@ -29,6 +28,7 @@ import org.xmlpull.v1.XmlPullParserFactory
 import java.io.IOException
 import java.io.InputStream
 import java.io.StringReader
+import java.net.URL
 import javax.xml.parsers.DocumentBuilderFactory
 import kotlin.text.StringBuilder
 
@@ -41,9 +41,12 @@ class CameraSelectionFragment : Fragment() {
 
     private lateinit var display :ImageView
     private lateinit var uri: Uri
+    private lateinit var photoView: ImageButton
+    private lateinit var foodName: EditText
 
     var productNames: ArrayList<String> = arrayListOf()
     var productImgs: ArrayList<String> = arrayListOf()
+    lateinit var imageBitmap: Bitmap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -97,7 +100,8 @@ class CameraSelectionFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        display = activity!!.displayPhoto
+        photoView = activity!!.photoView
+        foodName = activity!!.foodName
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -131,11 +135,11 @@ class CameraSelectionFragment : Fragment() {
 
         // カメラで撮影した画像の出力
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
-            val imageBitmap = data!!.extras!!.get("data") as Bitmap
-            display.setImageBitmap(imageBitmap)
-            Log.d("写真",imageBitmap.toString())
+            imageBitmap = data!!.extras!!.get("data") as Bitmap
+            photoView.setImageBitmap(imageBitmap)
 
         }
+
         //カメラロールの画像を出力
         else if(requestCode == READRE_REQUEST_CODE){
             try {
@@ -144,10 +148,9 @@ class CameraSelectionFragment : Fragment() {
                     val buffered = BufferedInputStream(inputStream)
                     val opt = BitmapFactory.Options()
                     opt.inJustDecodeBounds = false
-                    val image = BitmapFactory.decodeStream(buffered,null,opt)
+                    imageBitmap = BitmapFactory.decodeStream(buffered,null,opt) as Bitmap
                     inputStream!!.close()
-                    display.setImageBitmap(image)
-                    Log.d("写真",image.toString())
+                    Log.d("写真",imageBitmap.toString())
             }
             } catch (e: Exception) {
                 Log.d("写真","失敗")
@@ -192,6 +195,13 @@ class CameraSelectionFragment : Fragment() {
             // バーコードがら商品名と画像のURL取得完了
             Log.d("バーコード", productNames[0])
             Log.d("バーコード", productImgs[0])
+            foodName.setText(productNames[0])
+
+            Picasso.get()
+                .load("${productImgs[0]}")
+                .resize(200, 200) //表示サイズ指定
+                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                .into(photoView) //imageViewに流し込み
 
         } catch (Extension: IOException) {
             Log.d("XmlPullParserSample", "Error");
