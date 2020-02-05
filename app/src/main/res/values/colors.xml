@@ -8,8 +8,8 @@
     <color name="colorPrimaryDark">#CE8321</color>
     <color name="colorGray">#707070</color>
     <color name="transparent">#00000000</color>
-    <color name="colorWhite">#FFFFFF</color>
     <color name="graytransparent">#33000000</color>
+    <color name="colorWhite">#FFFFFF</color>
     <color name="colorAccent">#F28351</color>
     <color name="colorPrimaryLight">#ffd571</color>
     <color name="colorDrink">#47E3EF</color>
