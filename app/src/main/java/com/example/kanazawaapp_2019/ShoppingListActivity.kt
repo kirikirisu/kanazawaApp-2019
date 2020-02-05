@@ -26,12 +26,22 @@ class ShoppingListActivity : AppCompatActivity() {
 
         //保存食追加ボタンの実装
         shoppingListAddButton.setOnClickListener {
-            val intent = Intent(application, FoodAdditionActivity::class.java)
+//            val intent = Intent(application, FoodAdditionActivity::class.java)
             startActivity(intent)
         }
 
         //listにテストデータを追加
         ListView = findViewById(R.id.shoppingListView)
+        // 呼び出したいメソッド
+        fun setFragment() {
+            val fragment = shoppingSiteFragment()
+            val fragmentManager = this.supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
         var adapter = ShoppingListAdapter(this, generateData())
         ListView?.adapter = adapter
         adapter.notifyDataSetChanged()
