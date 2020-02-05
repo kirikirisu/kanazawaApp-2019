@@ -51,7 +51,6 @@ class FoodAdditionActivity : AppCompatActivity(){
             it.setHomeButtonEnabled(true)
         } ?: IllegalAccessError("toolbar cannot be, null")
 
-
         //ArrayAdapter
         val adapter = ArrayAdapter(
             applicationContext,
