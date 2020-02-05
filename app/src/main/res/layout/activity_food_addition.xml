@@ -65,7 +65,6 @@
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-15dp" />
 
-    <!-- 機能 -->
     <!-- フラグメント呼び出しボタン -->
     <ImageButton
         android:id="@+id/photoView"
@@ -74,8 +73,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:background="@color/colorWhite" />
+        android:layout_marginStart="24dp"
+        android:background="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.561" />
 
     <!-- 保存食名 -->
     <EditText
@@ -90,19 +93,6 @@
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/displayPhoto"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <!-- 保存食の画像表示 -->
-    <ImageView
-        android:id="@+id/displayPhoto"
-        android:layout_width="123dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <!-- 保存食ジャンル選択ピッカー -->
@@ -191,7 +181,6 @@
         app:layout_constraintStart_toEndOf="@+id/quantityView"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine3" />
 
-    <!-- 項目表示 -->
     <!-- 期限 -->
     <TextView
         android:id="@+id/limitView"
@@ -237,6 +226,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine" />
 
+    <!-- CameraFragment -->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <!-- 保存場所 -->
     <TextView
         android:id="@+id/saveLocationView"
@@ -245,48 +246,14 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:text="@string/foodLocation"
-        android:textSize="40dp" />
-
-    <!--チェックボックス-->
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="43dp"
-        android:layout_height="72dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="94dp"
-        android:scaleX="2"
-        android:scaleY="2" />
-
-    <!--場所アイコン-->
-    <ImageButton
-        android:id="@+id/stockIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:layout_marginBottom="197dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
-
-    <!--フラグメントの表示-->
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/boaderLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/boaderLine2" />
 
-<!-- 保存食追加ボタン -->
+    <!-- 追加ボタン -->
     <Button
         android:id="@+id/additionButton"
         android:layout_width="wrap_content"
