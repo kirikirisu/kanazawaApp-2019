@@ -13,10 +13,7 @@ import android.util.Xml
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.github.kittinunf.fuel.httpGet
 import com.google.zxing.integration.android.IntentIntegrator
@@ -45,6 +42,7 @@ class CameraSelectionFragment : Fragment() {
     private lateinit var display :ImageView
     private lateinit var uri: Uri
     private lateinit var photoView: ImageButton
+    private lateinit var foodName: EditText
 
     var productNames: ArrayList<String> = arrayListOf()
     var productImgs: ArrayList<String> = arrayListOf()
@@ -103,6 +101,7 @@ class CameraSelectionFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         photoView = activity!!.photoView
+        foodName = activity!!.foodName
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -140,6 +139,7 @@ class CameraSelectionFragment : Fragment() {
             photoView.setImageBitmap(imageBitmap)
 
         }
+
         //カメラロールの画像を出力
         else if(requestCode == READRE_REQUEST_CODE){
             try {
@@ -195,6 +195,7 @@ class CameraSelectionFragment : Fragment() {
             // バーコードがら商品名と画像のURL取得完了
             Log.d("バーコード", productNames[0])
             Log.d("バーコード", productImgs[0])
+            foodName.setText(productNames[0])
 
             Picasso.get()
                 .load("${productImgs[0]}")
