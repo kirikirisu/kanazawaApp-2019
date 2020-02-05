@@ -2,16 +2,20 @@ package com.example.kanazawaapp_2019
 
 import android.app.Activity
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
-import androidx.fragment.app.FragmentTransaction
+import androidx.constraintlayout.widget.ConstraintLayout
+import kotlinx.android.synthetic.main.activity_getting_start_main.*
 import kotlinx.android.synthetic.main.shoping_list_item.*
+import android.text.Layout as Layout1
 
-class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>, fragmentTransaction: FragmentTransaction) : BaseAdapter() {
+class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>) : BaseAdapter() {
 
     private class ViewHolder(row: View?) {
         var shoppingListItemImageView: ImageView? = null
@@ -31,16 +35,13 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
         if (convertView == null) {
             val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.shoping_list_item, null)
-            activity.tapLayout.setOnClickListener {
-                val fragment = shoppingSiteFragment()
-                val fragmentManager = this.supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.container, fragment)
-                    .addToBackStack(null)
-                    .commit()
-            }
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
+            view.findViewById<ConstraintLayout>(R.id.tapLayout).setOnClickListener {
+                //TODO: setFragment()を呼び出す
+                Log.d("テスト", "テスト")
+            }
+
         } else {
             view = convertView
             viewHolder = view.tag as ViewHolder
