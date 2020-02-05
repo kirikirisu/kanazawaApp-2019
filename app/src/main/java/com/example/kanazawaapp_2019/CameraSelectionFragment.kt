@@ -23,6 +23,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_food_addition.*
 import java.io.BufferedInputStream
 import com.github.kittinunf.result.Result;
+import com.squareup.picasso.Picasso
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 
@@ -30,6 +31,7 @@ import org.xmlpull.v1.XmlPullParserFactory
 import java.io.IOException
 import java.io.InputStream
 import java.io.StringReader
+import java.net.URL
 import javax.xml.parsers.DocumentBuilderFactory
 import kotlin.text.StringBuilder
 
@@ -136,7 +138,6 @@ class CameraSelectionFragment : Fragment() {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             imageBitmap = data!!.extras!!.get("data") as Bitmap
             photoView.setImageBitmap(imageBitmap)
-            Log.d("写真",imageBitmap.toString())
 
         }
         //カメラロールの画像を出力
@@ -149,7 +150,6 @@ class CameraSelectionFragment : Fragment() {
                     opt.inJustDecodeBounds = false
                     imageBitmap = BitmapFactory.decodeStream(buffered,null,opt) as Bitmap
                     inputStream!!.close()
-                    photoView.setImageBitmap(imageBitmap)
                     Log.d("写真",imageBitmap.toString())
             }
             } catch (e: Exception) {
@@ -195,6 +195,12 @@ class CameraSelectionFragment : Fragment() {
             // バーコードがら商品名と画像のURL取得完了
             Log.d("バーコード", productNames[0])
             Log.d("バーコード", productImgs[0])
+
+            Picasso.get()
+                .load("${productImgs[0]}")
+                .resize(200, 200) //表示サイズ指定
+                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                .into(photoView) //imageViewに流し込み
 
         } catch (Extension: IOException) {
             Log.d("XmlPullParserSample", "Error");
