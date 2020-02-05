@@ -55,6 +55,32 @@ class PreservedFoodListActivity : AppCompatActivity() {
             val intent = Intent(application, FoodAdditionActivity::class.java)
             startActivity(intent)
         }
+
+        //買い物リストへ
+        shoppingListTabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                var position = shoppingListTabLayout.selectedTabPosition
+                when (position) {
+                    1 -> {
+                        val intent = Intent(application, ShoppingListActivity::class.java)
+                        startActivities(arrayOf(intent))
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    }
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                var position = shoppingListTabLayout.selectedTabPosition
+                when (position) {
+                    1 -> {val intent = Intent(application, ShoppingListActivity::class.java)
+                        startActivities(arrayOf(intent))
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    }
+                }
+            }
+        })
     }
 
 
