@@ -2,8 +2,10 @@ package com.example.kanazawaapp_2019
 
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.activity_preserved_foods_list.*
 
 class PreservedFoodListActivity : AppCompatActivity() {
@@ -17,6 +19,11 @@ class PreservedFoodListActivity : AppCompatActivity() {
             it.setDisplayHomeAsUpEnabled(true)
             it.setHomeButtonEnabled(true)
         }?:IllegalAccessError("toolbar cannot be,null")
+
+        val actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout,toolBar,R.string.app_name, R.string.app_name)
+        drawer_layout.addDrawerListener(actionBarDrawerToggle)
+        actionBarDrawerToggle.syncState()
+
         // set adapter
         val fragmentAdapter = PagerAdapterFoodList(supportFragmentManager)
         viewPager.adapter = fragmentAdapter

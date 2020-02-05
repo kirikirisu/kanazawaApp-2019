@@ -26,7 +26,7 @@
             android:theme="@style/NoActionBar"></activity>
         <activity
             android:name=".PreservedFoodListActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/DrawerTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
