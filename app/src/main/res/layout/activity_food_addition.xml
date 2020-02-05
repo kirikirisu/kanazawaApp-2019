@@ -75,10 +75,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
-        android:background="@color/colorWhite"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayPhoto"
-        app:srcCompat="@drawable/camera_icon" />
+        android:background="@color/colorWhite" />
 
     <!-- 保存食名 -->
     <EditText
@@ -250,12 +247,44 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
         android:text="@string/foodLocation"
+<<<<<<< HEAD
         android:textSize="40dp"
         app:layout_constraintBottom_toTopOf="@+id/boaderLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine2" />
 
     <!-- Fragment -->
+=======
+        android:textSize="40dp" />
+
+    <!--チェックボックス-->
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="43dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="94dp"
+        android:scaleX="2"
+        android:scaleY="2" />
+
+    <!--場所アイコン-->
+    <ImageButton
+        android:id="@+id/stockIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="197dp"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <!--フラグメントの表示-->
+
+>>>>>>> 037767c1e8671b7a3d5a1d5b86c6afb115b2c386
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

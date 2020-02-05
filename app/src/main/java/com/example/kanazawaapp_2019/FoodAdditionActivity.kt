@@ -26,6 +26,8 @@ class FoodAdditionActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_addition)
 
+        photoView.setImageResource(R.drawable.camera_icon)
+
         //ImageButtonの処理
         photoView.setOnClickListener {
             val fragment = CameraSelectionFragment()
@@ -34,6 +36,7 @@ class FoodAdditionActivity : AppCompatActivity(){
             fragmentTransaction.replace(R.id.container,fragment)
                 .addToBackStack(null)
                 .commit()
+
             clickCameraButton()
         }
 
@@ -70,8 +73,6 @@ class FoodAdditionActivity : AppCompatActivity(){
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
-
-
 
             }
 
