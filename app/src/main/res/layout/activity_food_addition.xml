@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarSize="40dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/foodAdditionHeader"/>
+
+    <!--境界線-->
+    <View
+        android:id="@+id/boaderLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="415dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:id="@+id/boaderLine2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="519dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:id="@+id/boaderLine3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="300dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:id="@+id/boaderLine4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="186dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <View
+        android:id="@+id/boaderLine5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="71dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <!--保存食写真-->
+    <ImageButton
+        android:id="@+id/photoView"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="240dp"
+        android:layout_marginRight="240dp"
+        android:layout_marginBottom="579dp"
+        android:background="@color/colorWhite"
+        />
+
+    <!--保存食名-->
+    <EditText
+        android:id="@+id/foodName"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="612dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <!--保存食ジャンル選択ピッカー-->
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="546dp"
+        android:textColor="@color/graytransparent"
+        android:background="@color/colorWhite" />
+
+    <!--期限ピッカー-->
+    <Button
+        android:id="@+id/DatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="454dp"
+        android:text="@string/datePiceker" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="430dp"
+        android:text="@string/pickerText" />
+
+    <!--保存食数量ピッカー-->
+    <NumberPicker
+        android:id="@+id/number_picker"
+        android:layout_width="176dp"
+        android:layout_height="81dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="308dp"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <!--記入項目-->
+
+    <TextView
+        android:id="@+id/limitView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="300dp"
+        android:layout_marginRight="300dp"
+        android:layout_marginBottom="441dp"
+        android:text="@string/foodLimit"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/quantityView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="301dp"
+        android:layout_marginRight="301dp"
+        android:layout_marginBottom="332dp"
+        android:text="@string/foodQuantity"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/commercialView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="304dp"
+        android:layout_marginRight="304dp"
+        android:layout_marginBottom="99dp"
+        android:text="@string/commercialFood"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/saveLocationView"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="203dp"
+        android:layout_marginRight="203dp"
+        android:layout_marginBottom="220dp"
+        android:text="@string/foodLocation"
+        android:textSize="40dp" />
+
+    <!--チェックボックス-->
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="43dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="94dp"
+        android:scaleX="2"
+        android:scaleY="2" />
+
+    <!--場所アイコン-->
+    <ImageButton
+        android:id="@+id/stockIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="197dp"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <!--フラグメントの表示-->
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </FrameLayout>
+
+    <!--保存食追加ボタン-->
+<!--    <ImageButton-->
+<!--        android:id="@+id/additionButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginEnd="17dp"-->
+<!--        android:layout_marginRight="17dp"-->
+<!--        android:background="#FDAB4B"-->
+<!--        app:srcCompat="@drawable/add_food" />-->
+
+<!--    <menu xmlns:android="http://schemas.android.com/apk/res/android" >-->
+<!--        <item-->
+<!--            android:id="@+id/action_addtionBtn"-->
+<!--            android:con="drawable/add_food.png_48dp"-->
+<!--            android:titele="@string/action_addition"-->
+<!--            app:showAsAction="ifRoom" />-->
+
+<!--        <item-->
+<!--            android:id="@+id/action_settings"-->
+<!--            android:title="@string/action_settings"-->
+<!--            app:showAsAction="never"/>-->
+<!--    </menu>-->
+
+</RelativeLayout>

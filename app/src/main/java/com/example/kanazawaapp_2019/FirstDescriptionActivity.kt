@@ -15,8 +15,6 @@ class FirstDescriptionActivity : AppCompatActivity() {
     fun toNext(view: View) {
         val intent = Intent(this, SecondDescriptionActivity::class.java)
         startActivity(intent)
-        //遷移するアニメーションを定義
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
     }
 }
-
