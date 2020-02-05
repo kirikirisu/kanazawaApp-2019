@@ -54,4 +54,6 @@
     <string name="descriptionLastTutorial">わからないことは\n"簡単入門"で確認できます。\nまずは初期設定をしましょう。</string>
     <string name="goToSetting">設定へ</string>
     <string name="foodAddition">追加</string>
+    <string name="Icons">アイコン</string>
+    <string name="usingText">テキス入力</string>
 </resources>
