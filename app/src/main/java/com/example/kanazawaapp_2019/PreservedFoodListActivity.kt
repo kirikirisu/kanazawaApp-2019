@@ -1,5 +1,6 @@
 package com.example.kanazawaapp_2019
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,11 @@ class PreservedFoodListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preserved_foods_list)
 
-        setSupportActionBar(toolBar)
+        setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.setHomeButtonEnabled(true)
+        }?:IllegalAccessError("toolbar cannot be,null")
         // set adapter
         val fragmentAdapter = PagerAdapterFoodList(supportFragmentManager)
         viewPager.adapter = fragmentAdapter
@@ -44,6 +49,12 @@ class PreservedFoodListActivity : AppCompatActivity() {
 
             }
         })
+
+        //保存食追加ボタンの実装
+        shoppingListAddButton.setOnClickListener {
+            val intent = Intent(application, FoodAdditionActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
