@@ -2,7 +2,6 @@ package com.example.kanazawaapp_2019
 
 import android.app.Activity
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_getting_start_main.*
 import kotlinx.android.synthetic.main.shoping_list_item.*
 import android.text.Layout as Layout1
 
-class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>) : BaseAdapter() {
+class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>, private val listener: FragmentCallInterface) : BaseAdapter() {
 
     private class ViewHolder(row: View?) {
         var shoppingListItemImageView: ImageView? = null
@@ -38,8 +37,7 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
             view.findViewById<ConstraintLayout>(R.id.tapLayout).setOnClickListener {
-                //TODO: setFragment()を呼び出す
-                Log.d("テスト", "テスト")
+                listener.setFragment()
             }
 
         } else {
