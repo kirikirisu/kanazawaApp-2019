@@ -259,7 +259,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine2" />
 
-    <!-- カメラ選択フラグメント -->
+    <!--フラグメントの表示-->
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
