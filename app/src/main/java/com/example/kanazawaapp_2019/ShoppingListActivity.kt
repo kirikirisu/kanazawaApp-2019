@@ -24,8 +24,9 @@ class ShoppingListActivity : AppCompatActivity() {
                 var position = shoppingListTabLayout.selectedTabPosition
                 when (position) {
                     0 -> {
-                        val intent = Intent(application, PreservedFoodsListActivity::class.java)
+                        val intent = Intent(application, PreservedFoodListActivity::class.java)
                         startActivities(arrayOf(intent))
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
                     }
                     else -> {
                         shoppingListView.setSelection(0)
@@ -38,8 +39,10 @@ class ShoppingListActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab) {
                 var position = shoppingListTabLayout.selectedTabPosition
                 when (position) {
-                    0 -> {val intent = Intent(application, PreservedFoodsListActivity::class.java)
-                    startActivities(arrayOf(intent))
+                    0 -> {
+                        val intent = Intent(application, PreservedFoodListActivity::class.java)
+                        startActivities(arrayOf(intent))
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
                     }
                     else -> {
                     shoppingListView.setSelection(0)

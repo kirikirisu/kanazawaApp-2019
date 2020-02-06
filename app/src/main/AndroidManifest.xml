@@ -18,10 +18,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".FoodAdditionActivity"
                 android:label="@string/foodAdditionHeader">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".SettingActivity" />
         <activity android:name=".HowToLookShelterActivity" />
@@ -37,7 +34,12 @@
         <activity android:name=".InitialNumberSettingActivity" />
         <activity android:name=".InitialNotificationSettingActivity" />
         <activity android:name=".PreservedFoodListActivity" />
-        <activity android:name=".ShoppingListActivity" />
+        <activity android:name=".ShoppingListActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>
