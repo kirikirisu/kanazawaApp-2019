@@ -43,5 +43,8 @@ class shoppingSiteFragment : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
+        view!!.constraintLayout.setOnClickListener{
+            activity?.supportFragmentManager?.popBackStack()
+        }
     }
 }
