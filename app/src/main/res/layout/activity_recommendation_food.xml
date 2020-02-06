@@ -22,7 +22,7 @@
         android:layout_marginLeft="97sp"
         android:layout_marginTop="60dp"
         android:text="非常食は最低でも\n3日分は用意しましょう"
-        android:textSize="21sp" />
+        android:textSize="21sp"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -31,7 +31,8 @@
         android:layout_marginTop="130dp"
         android:layout_marginLeft="20dp"
         android:text="飲料水"
-        android:textSize="21sp"/>
+        android:textSize="21sp"
+        android:textColor="@color/colorDrink"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -40,7 +41,8 @@
         android:layout_marginTop="170dp"
         android:layout_marginLeft="20dp"
         android:text="@string/recommendFoodDrink"
-        android:textSize="21sp"/>
+        android:textSize="21sp"
+        android:textColor="@color/colorDrink"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -49,7 +51,8 @@
         android:layout_marginTop="280dp"
         android:layout_marginLeft="20dp"
         android:text="主食"
-        android:textSize="21sp"/>
+        android:textSize="21sp"
+        android:textColor="@color/colorStapleFood"/>
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -57,7 +60,8 @@
         android:layout_marginTop="320dp"
         android:layout_marginLeft="20dp"
         android:text="@string/recommendFoodStapleFood"
-        android:textSize="21sp"/>
+        android:textSize="21sp"
+        android:textColor="@color/colorStapleFood"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -66,6 +70,7 @@
         android:layout_marginTop="440dp"
         android:layout_marginLeft="20dp"
         android:text="間食"
+        android:textColor="@color/colorSnack"
         android:textSize="21sp"/>
 
     <TextView
@@ -75,6 +80,7 @@
         android:layout_marginTop="480dp"
         android:layout_marginLeft="20dp"
         android:text="@string/recommendSnack"
+        android:textColor="@color/colorSnack"
         android:textSize="21sp"/>
 
 
