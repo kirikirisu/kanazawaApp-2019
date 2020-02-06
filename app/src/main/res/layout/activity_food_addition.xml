@@ -8,6 +8,7 @@
     android:scrollbarSize="40dp">
 
     <!-- Toolbarの設定 -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -90,7 +91,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:ems="10"
-        android:inputType="date"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -153,7 +154,7 @@
         app:layout_constraintTop_toBottomOf="@+id/boaderLine"
         app:layout_constraintVertical_bias="0.452" />
 
-    <!--  保存場所選択ボタン-->
+    <!-- 保存場所選択ボタン -->
     <ImageButton
         android:id="@+id/stockIcon"
         android:layout_width="wrap_content"
@@ -168,7 +169,7 @@
         app:layout_constraintTop_toBottomOf="@+id/boaderLine2"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
-    <!-- 保存料選択ピッカー -->
+    <!-- 保存食料選択ピッカー -->
     <NumberPicker
         android:id="@+id/number_picker"
         android:layout_width="176dp"
@@ -180,6 +181,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/quantityView"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine3" />
+
+    <!-- 追加ボタン -->
+    <Button
+        android:id="@+id/additionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/foodAddition"
+        android:textColor="@color/colorWhite"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:srcCompat="@drawable/add_food" />
 
     <!-- 期限 -->
     <TextView
@@ -226,18 +244,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine" />
 
-    <!-- CameraFragment -->
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <!-- 保存場所 -->
     <TextView
         android:id="@+id/saveLocationView"
@@ -253,21 +259,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boaderLine2" />
 
-    <!-- 追加ボタン -->
-    <Button
-        android:id="@+id/additionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:background="@color/colorPrimary"
-        android:text="@string/foodAddition"
-        android:textSize="25dp"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:srcCompat="@drawable/add_food" />
+    <!-- カメラ選択フラグメント -->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
