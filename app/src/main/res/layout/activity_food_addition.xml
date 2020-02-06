@@ -69,7 +69,7 @@
         android:layout_marginRight="240dp"
         android:layout_marginBottom="579dp"
         android:background="@color/colorWhite"
-        app:srcCompat="@drawable/camera_icon" />
+        />
 
     <!--保存食名-->
     <EditText
@@ -210,13 +210,6 @@
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <!--フラグメントの表示-->
-
-    <ImageView
-        android:id="@+id/displayPhoto"
-        android:layout_width="123dp"
-        android:layout_height="98dp"
-        android:layout_marginRight="242dp"
-        android:background="@color/colorPrimaryDark" />
 
     <FrameLayout
         android:id="@+id/container"

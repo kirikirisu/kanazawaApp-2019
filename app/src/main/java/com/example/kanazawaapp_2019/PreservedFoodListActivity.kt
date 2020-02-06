@@ -1,5 +1,6 @@
 package com.example.kanazawaapp_2019
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -48,6 +49,12 @@ class PreservedFoodListActivity : AppCompatActivity() {
 
             }
         })
+
+        //保存食追加ボタンの実装
+        shoppingListAddButton.setOnClickListener {
+            val intent = Intent(application, FoodAdditionActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
