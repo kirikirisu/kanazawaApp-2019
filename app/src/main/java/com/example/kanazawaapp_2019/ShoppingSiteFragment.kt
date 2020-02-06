@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_shopping_site.view.*
 /**
  * A simple [Fragment] subclass.
  */
-class shoppingSiteFragment : Fragment() {
+class ShoppingSiteFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
