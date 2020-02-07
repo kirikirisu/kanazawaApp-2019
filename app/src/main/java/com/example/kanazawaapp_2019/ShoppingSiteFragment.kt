@@ -38,10 +38,15 @@ class ShoppingSiteFragment : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
+
         view!!.yahooButton.setOnClickListener{
             val uri = Uri.parse("https://shopping.yahoo.co.jp/")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
+        }
+
+        view!!.constraintLayout.setOnClickListener{
+            activity?.supportFragmentManager?.popBackStack()
         }
     }
 }
