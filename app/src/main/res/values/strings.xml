@@ -9,6 +9,8 @@
     <string name="foodLocation">保存場所</string>
     <string name="commercialFood">市販</string>
     <string name="datePiceker">賞味期限</string>
+    <string name="shoppingItem">item</string>
+    <string name="shoppingCount">count</string>
     <string name="pickerText">Date</string>
     <string name="quantityString">Select number</string>
     <string name="barcodeReading">バーコード読み込み</string>
