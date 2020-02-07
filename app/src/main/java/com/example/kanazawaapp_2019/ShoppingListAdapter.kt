@@ -14,7 +14,9 @@ import kotlinx.android.synthetic.main.activity_getting_start_main.*
 import kotlinx.android.synthetic.main.shoping_list_item.*
 import android.text.Layout as Layout1
 
-class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>, private val listener: FragmentCallInterface) : BaseAdapter() {
+class ShoppingListAdapter(private var activity: Activity, private var items: ArrayList<ShoppingItem>) : BaseAdapter() {
+
+    var listener: FragmentCallInterface? = null
 
     private class ViewHolder(row: View?) {
         var shoppingListItemImageView: ImageView? = null
@@ -29,6 +31,7 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
         val view: View?
         val viewHolder: ViewHolder
         if (convertView == null) {
@@ -37,7 +40,7 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
             view.findViewById<ConstraintLayout>(R.id.tapLayout).setOnClickListener {
-                listener.setFragment()
+                listener?.setFragment()
             }
 
         } else {

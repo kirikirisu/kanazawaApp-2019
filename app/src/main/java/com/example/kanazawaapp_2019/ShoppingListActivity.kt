@@ -35,7 +35,8 @@ class ShoppingListActivity : AppCompatActivity(), FragmentCallInterface{
         //listにテストデータを追加
         ListView = findViewById(R.id.shoppingListView)
 
-        var adapter = ShoppingListAdapter(this,generateData(), listener = this)
+        var adapter = ShoppingListAdapter(this,generateData())
+        adapter.listener = this
         ListView?.adapter = adapter
         adapter.notifyDataSetChanged()
     }
