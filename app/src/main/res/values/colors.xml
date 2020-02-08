@@ -3,7 +3,7 @@
     <color name="colorPrimary">#F2B451</color>
     <color name="tabBackgroundSelected">#F2B451</color>
     <color name="tabBackgroundSelectedFoodList">#FFFFFF</color>
-    <color name="tabBackgroundUnselected">#C2C3C4</color>
+    <color name="tabBackgroundUnselected">#8AC2C3C4</color>
     <color name="colorSecondary">#51E6F2</color>
     <color name="colorPrimaryDark">#CE8321</color>
     <color name="colorGray">#707070</color>
@@ -16,4 +16,6 @@
     <color name="colorStapleFood">#EEA641</color>
     <color name="colorSnack">#ED6E40</color>
     <color name="white">#FFFFFF</color>
+    <color name="tabText">#1F1F1F</color>
+    <color name="tabTextUnselected">#8B8B8B</color>
 </resources>
