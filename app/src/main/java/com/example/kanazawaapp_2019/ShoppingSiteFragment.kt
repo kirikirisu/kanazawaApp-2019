@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_shopping_site.view.*
 /**
  * A simple [Fragment] subclass.
  */
-class shoppingSiteFragment : Fragment() {
+class ShoppingSiteFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +38,7 @@ class shoppingSiteFragment : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
+
         view!!.yahooButton.setOnClickListener{
             val uri = Uri.parse("https://shopping.yahoo.co.jp/")
             val intent = Intent(Intent.ACTION_VIEW, uri)

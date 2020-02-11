@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/graytransparent"
-    tools:context=".shoppingSiteFragment">
+    tools:context=".ShoppingSiteFragment">
 
     <ImageButton
         android:id="@+id/amazonButton"
