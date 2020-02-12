@@ -40,7 +40,8 @@ class ShoppingListAdapter(private var activity: Activity, private var items: Arr
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
             view.findViewById<ConstraintLayout>(R.id.tapLayout).setOnClickListener {
-                listener?.setFragment()
+                val tapNum = position
+                listener?.setFragment(tapNum)
             }
 
         } else {

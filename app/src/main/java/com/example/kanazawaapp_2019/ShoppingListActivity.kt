@@ -6,18 +6,20 @@ import android.widget.ListView
 import kotlinx.android.synthetic.main.activity_shoppinglist.*
 
 interface FragmentCallInterface {
-    fun setFragment()
+    fun setFragment(tapNum : Int)
 }
 
 class ShoppingListActivity : AppCompatActivity(), FragmentCallInterface{
 
     var ListView: ListView? = null
 
-    override fun setFragment() {
-        val fragment = ShoppingSiteFragment()
+    override fun setFragment(tapNum: Int) {
+        val shoppingName = generateData()[tapNum].item
+
+        val ShoppingSiteFragment = ShoppingSiteFragment.newInstance(shoppingName)
         val fragmentManager = this.supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.container, fragment)
+        fragmentTransaction.replace(R.id.container, ShoppingSiteFragment)
             .addToBackStack(null)
             .commit()
     }
