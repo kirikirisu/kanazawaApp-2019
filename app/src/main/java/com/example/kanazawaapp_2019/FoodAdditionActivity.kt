@@ -1,9 +1,11 @@
 package com.example.kanazawaapp_2019
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
@@ -38,14 +40,19 @@ class FoodAdditionActivity : AppCompatActivity(){
             clickCameraButton()
         }
 
-        //ActionButtonの追加
+        //追加ボタンの処理
+        additionButton.setOnClickListener {
+            val intent = Intent(application, PreservedFoodListActivity::class.java)
+            startActivity(intent)
+        }
+
+        //ActionBarの追加
         window.statusBarColor = ContextCompat.getColor(this,R.color.colorPrimaryDark)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setHomeButtonEnabled(true)
         } ?: IllegalAccessError("toolbar cannot be, null")
-
 
         //ArrayAdapter
         val adapter = ArrayAdapter(
@@ -87,7 +94,7 @@ class FoodAdditionActivity : AppCompatActivity(){
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{
                     view ,mYear ,mMonth ,mDay ->
                 //set TextView
-                dateText.setText(""+mYear+"/"+mMonth+"/"+mDay)
+                dateText.setText(""+mYear+"/"+(mMonth+1)+"/"+mDay)
             },year,month,day)
                 //show dialog
             dpd.show()
