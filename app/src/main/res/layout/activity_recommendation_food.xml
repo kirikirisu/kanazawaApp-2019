@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PreservedFoodListActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:title="@string/recommendFood"
+        app:titleTextColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="97sp"
+        android:layout_marginTop="60dp"
+        android:text="非常食は最低でも\n3日分は用意しましょう"
+        android:textSize="21sp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="20dp"
+        android:text="飲料水"
+        android:textSize="21sp"
+        android:textColor="@color/colorDrink"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="20dp"
+        android:text="@string/recommendFoodDrink"
+        android:textSize="21sp"
+        android:textColor="@color/colorDrink"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="20dp"
+        android:text="主食"
+        android:textSize="21sp"
+        android:textColor="@color/colorStapleFood"/>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="20dp"
+        android:text="@string/recommendFoodStapleFood"
+        android:textSize="21sp"
+        android:textColor="@color/colorStapleFood"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="20dp"
+        android:text="間食"
+        android:textColor="@color/colorSnack"
+        android:textSize="21sp"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="20dp"
+        android:text="@string/recommendSnack"
+        android:textColor="@color/colorSnack"
+        android:textSize="21sp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

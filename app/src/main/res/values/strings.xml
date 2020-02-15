@@ -51,6 +51,13 @@
     <string name="notification">通知</string>
     <string name="setting">設定</string>
     <string name="foodList">保存食一覧</string>
+    <string name="recommendFood">オススメの非常食</string>
+    <string name="recommendFoodDrink">緊急時に飲料水は1日に1人３L必要\nとされます。よって生き延びるために\n
+    必要となる水の量は最低でも9Lになります。</string>
+    <string name="recommendFoodStapleFood">災害時は不安などにより食欲減退が起きてしまうので、
+    普段と変わらないものを食べることで健康状態を保つことが重要です。</string>
+    <string name="recommendSnack">災害時に主食となりうるものはとても重要です。間食を利用することで
+    主食の量を抑えることができます。また間食は主食に比べてコンパクトなので持ち運びも便利です。</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appDescription">登録した保存食を\n追加購入まで\n管理できます。</string>
     <string name="descriptionLastTutorial">わからないことは\n"簡単入門"で確認できます。\nまずは初期設定をしましょう。</string>
