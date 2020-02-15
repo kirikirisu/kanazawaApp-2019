@@ -8,6 +8,7 @@
     <uses-feature android:name="android.hardware.camera"
         android:required="true" />
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
     <application
         android:hardwareAccelerated="true"
         android:allowBackup="true"
@@ -17,8 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".FoodAdditionActivity"
-                android:label="@string/foodAdditionHeader">
+            android:label="@string/foodAdditionHeader">
         </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/NoActionBar"></activity>
         <activity android:name=".SettingActivity" />
         <activity android:name=".HowToLookShelterActivity" />
         <activity android:name=".HowToNotificationSettingsActivity" />
@@ -32,14 +37,19 @@
         <activity android:name=".FirstDescriptionActivity" />
         <activity android:name=".InitialNumberSettingActivity" />
         <activity android:name=".InitialNotificationSettingActivity" />
-        <activity android:name=".PreservedFoodListActivity" />
-        <activity
-            android:name=".ShoppingListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".PreservedFoodListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShoppingListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 </manifest>
