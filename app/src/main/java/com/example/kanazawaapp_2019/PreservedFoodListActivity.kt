@@ -3,6 +3,7 @@ package com.example.kanazawaapp_2019
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ToggleButton
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
@@ -24,6 +25,7 @@ class PreservedFoodListActivity : AppCompatActivity() {
         val actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout,toolBar,R.string.app_name, R.string.app_name)
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
+
 
         // set adapter
         val fragmentAdapter = PagerAdapterFoodList(supportFragmentManager)
@@ -62,6 +64,7 @@ class PreservedFoodListActivity : AppCompatActivity() {
             val intent = Intent(application, FoodAdditionActivity::class.java)
             startActivity(intent)
         }
+
         //買い物リストへ
         shoppingListTabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
