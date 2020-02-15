@@ -46,8 +46,6 @@ class ShoppingListActivity : AppCompatActivity(), FragmentCallInterface{
         var result = ArrayList<ShoppingItem>()
         var part1 = ShoppingItem("カロリーメイト","10個")
         result.add(part1)
-        var part2 = ShoppingItem("鯖缶","20個")
-        result.add(part2)
         return result
     }
 }
