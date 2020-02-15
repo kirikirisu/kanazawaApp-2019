@@ -29,6 +29,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="9dp"
+        android:src="@drawable/sample_snack"
         app:layout_constraintBottom_toBottomOf="@+id/shoppingListCheckBox"
         app:layout_constraintEnd_toStartOf="@+id/shoppingListItemNameText"
         app:layout_constraintStart_toEndOf="@+id/shoppingListCheckBox"
