@@ -1,122 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:gravity="fill"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:popupTheme="@style/Base.Theme.AppCompat.Light"></androidx.appcompat.widget.Toolbar>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/toolbarTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/foodList"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolBar"
-        app:layout_constraintTop_toTopOf="@+id/toolBar" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="fill"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/Base.Theme.AppCompat.Light"></androidx.appcompat.widget.Toolbar>
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:scaleX="0.55"
-        android:scaleY="0.55"
-        android:src="@drawable/sort"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbarTitle"
-        app:layout_constraintStart_toEndOf="@+id/toolbarTitle"
-        app:layout_constraintTop_toTopOf="@+id/toolbarTitle" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolBar"
-        app:tabBackground="@drawable/tab_color_selector_foodlist"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/colorDrink"
-        app:tabSelectedTextColor="@color/tabText"
-        app:tabTextColor="@color/tabTextUnselected"
-        app:tabMaxWidth="0dp"
-        app:tabMode="fixed"
-        app:tabTextAppearance="@style/tabTitleText">
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="1dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toTopOf="@+id/shoppingListLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
-
-    </androidx.viewpager.widget.ViewPager>
-
-    <View
-        android:id="@+id/shoppingListLine"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/colorGray"
-        app:layout_constraintBottom_toTopOf="@+id/shoppingListTabLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/shoppingListTabLayout"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:foreground="?android:windowContentOverlay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:tabIndicatorColor="@color/transparent"
-        app:tabRippleColor="@color/transparent">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/orangePreservedFoodTabItem"
+        <TextView
+            android:id="@+id/toolbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/orange_list" />
+            android:gravity="center"
+            android:text="@string/foodList"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/toolBar"
+            app:layout_constraintTop_toTopOf="@+id/toolBar" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/blackShoppingListTabItem"
+        <ImageButton
+            android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/gray_bag" />
+            android:background="@color/colorPrimary"
+            android:scaleX="0.55"
+            android:scaleY="0.55"
+            android:src="@drawable/sort"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbarTitle"
+            app:layout_constraintStart_toEndOf="@+id/toolbarTitle"
+            app:layout_constraintTop_toTopOf="@+id/toolbarTitle" />
 
-    </com.google.android.material.tabs.TabLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar"
+            app:tabBackground="@drawable/tab_color_selector_foodlist"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorDrink"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/tabText"
+            app:tabTextAppearance="@style/tabTitleText"
+            app:tabTextColor="@color/tabTextUnselected">
 
-    <ImageButton
-        android:id="@+id/shoppingListAddButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/shopping_list_add_button_form"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shoppingListTabLayout"
-        app:srcCompat="@drawable/plus_icon" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="1dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toTopOf="@+id/shoppingListLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/shoppingListTabLayout"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:foreground="?android:windowContentOverlay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tabIndicatorColor="@color/transparent"
+            app:tabRippleColor="@color/transparent">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/orangePreservedFoodTabItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/orange_list" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/blackShoppingListTabItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/gray_bag" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <View
+            android:id="@+id/shoppingListLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"
+            app:layout_constraintBottom_toTopOf="@+id/shoppingListTabLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/shoppingListAddButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shopping_list_add_button_form"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shoppingListTabLayout"
+            app:srcCompat="@drawable/plus_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
